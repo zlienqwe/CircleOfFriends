@@ -10,7 +10,7 @@
 #import "ContentModel.h"
 
 @interface ContentMapping : NSObject
--(ContentMapping*)initWithContentUserName:(NSString*) contentUserName And:(NSString*) contentText And:(NSString*) contentPubFrom And:(NSString*) contentAvatar;
+-(ContentMapping*)initWithContentUserName:(NSString*) contentUserName And:(NSString*) contentText And:(NSString*) contentPubFrom And:(NSString*) contentAvatar And:(NSString *) contentImages;
 -(NSMutableArray*)mappingContentArray:(NSArray*)contentArray;
 -(ContentModel*) mappingContent:(NSDictionary*)contentData;
 @end

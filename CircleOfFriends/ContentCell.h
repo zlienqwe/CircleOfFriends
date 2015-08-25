@@ -19,6 +19,10 @@
 @property UILabel * ContentPubTime;
 @property UILabel * ContentPubFrom;
 @property UIImageView * ContentReplyIcon;
+@property UIImage * ContentLikeIcon;
+@property UILabel * ContentLikeUserName;
+@property UILabel * ContentReply;
+@property UIView * separator;
 
-
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier boolImage:(BOOL) boolimage;
 @end

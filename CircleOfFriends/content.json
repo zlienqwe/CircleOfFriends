@@ -3,74 +3,86 @@
  
  "ContentUserName": "朱江",
  "ContentText": "这是一个安静的早晨",
- "ContentAvatar": "1.png",
- "ContentPubFrom": "iPhone"
+ "ContentAvatar": "1",
+ "ContentPubFrom": "iPhone",
+ "ContentImages":"content13"
  },
  {
  "ContentUserName": "李燕子",
  "ContentText": "鸽哨声伴着起床的号音",
- "ContentAvatar": "2.png",
+ "ContentAvatar": "2",
+ "ContentImages":"content2",
  "ContentPubFrom": "2015-08-02"
  }, {
  
  "ContentUserName": "张志慧",
  "ContentText": "但是这世界并不安宁",
- "ContentAvatar": "2.png",
+ "ContentAvatar": "2",
+ "ContentImages":"content3",
  "ContentPubFrom": "2015-08-01"
  },
  {
  "ContentUserName": "严嘉阳",
  "ContentText": "和平年代也有激荡的风云",
- "ContentAvatar": "2.png",
+ "ContentAvatar": "2",
+ "ContentImages":"content4",
  "ContentPubFrom": "2015-08-02"
  }, {
  
  "ContentUserName": "朱江",
  "ContentText": "看那军旗飞舞的方向前进着战车舰队和机群",
- "ContentAvatar": "2.png",
+ "ContentAvatar": "2",
+ "ContentImages":"content5",
  "ContentPubFrom": "2015-08-01"
  },
  {
  "ContentUserName": "13211111111",
  "ContentText": "上面也飘扬着我们的名字年轻的士兵渴望建立功勋",
- "ContentAvatar": "3.png",
+ "ContentAvatar": "3",
+ "ContentImages":"content6",
  "ContentPubFrom": "2015-08-02"
  }, {
  
  "ContentUserName": "朱江",
- "ContentAvatar": "4.png",
+ "ContentAvatar": "4",
+ "ContentImages":"content6",
  "ContentText": "准备好了吗士兵兄弟们当那一天真的来临",
  "ContentPubFrom": "2015-08-01"
  },
  {
  "ContentUserName": "13211111111",
  "ContentText": "放心吧祖国放心吧亲人为了胜利我要勇敢前进",
- "ContentAvatar": "5.png",
+ "ContentAvatar": "5",
+ "ContentImages":"content7",
  "ContentPubFrom": "2015-08-02"
  }, {
  
  "ContentUserName": "朱江",
- "ContentAvatar": "5.png",
+ "ContentAvatar": "5",
+ "ContentImages":"content8",
  "ContentText": "准备好了吗士兵兄弟们当那一天真的来临",
  "ContentPubFrom": "2015-08-01"
  },
  {
  "ContentUserName": "13211111111",
  "ContentText": "放心吧祖国放心吧亲人为了胜利我要勇敢前进",
- "ContentAvatar": "6.png",
+ "ContentAvatar": "6",
+ "ContentImages":"content9",
  "ContentPubFrom": "2015-08-02"
  }, {
  
  "ContentUserName": "朱江",
  "ContentText": "这是一个晴朗的早晨鸽哨声伴着起床号音但是这世界并不安宁和平年代也有激荡的风看那军旗飞舞的方向前进着战车舰队和机群上面也飘扬着我们的名字年轻的士兵渴望建立功勋",
- "ContentAvatar": "7.png",
+ "ContentAvatar": "7",
+ "ContentImages":"content10",
  "ContentPubFrom": "2015-08-01"
  
  },
  {
  "ContentUserName": "13211111111",
  "ContentText": "准备好了吗士兵兄弟们当那一天真的来临放心吧祖国放心吧亲人为了胜利我要勇敢前进",
- "ContentAvatar": "7.png",
+ "ContentAvatar": "7",
+ "ContentImages":"content11",
  "ContentPubFrom": "2015-08-02"
  }
  ]

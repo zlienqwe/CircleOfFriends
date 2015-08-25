@@ -15,7 +15,7 @@
 static const CGFloat MJDuration = 2.0;
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
 
-//#define Local @"content.json"
+#define Local @"content.json"
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 {
@@ -25,7 +25,9 @@ static const CGFloat MJDuration = 2.0;
     UIActivityIndicatorView *activityIndicator;
     UIImage * albumCover;
     ReadPlist *readPlist;
-    
+    NSInteger cellhight;
+    NSMutableDictionary* dicheight;
+
 
     
 }
@@ -36,11 +38,14 @@ static const CGFloat MJDuration = 2.0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     service=[Service new];
-    readPlist = [ReadPlist new];
-    [self getUrlData];
+//    readPlist = [ReadPlist new];
+//    [self getUrlData];
     
     
-//    contentObject = [service readJson:Local];
+    contentObject = [service readJson:Local];
+    dicheight=[NSMutableDictionary dictionary];
+    cellhight=250;
+
     [self initView];
     [self setupRefresh];
 
@@ -103,7 +108,7 @@ static const CGFloat MJDuration = 2.0;
             id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
             
             //            ContentMapping *_contentMapping = [[ContentMapping alloc]initWithContentUserName:@"ContentUserName" And:@"ContentText" And:@"ContentPubFrom" And:@"ContentAvatar"];
-            ContentMapping *_contentMapping = [[ContentMapping alloc]initWithContentUserName:@"phonenumber" And:@"location" And:@"location" And:@"ContentAvatar"];
+            ContentMapping *_contentMapping = [[ContentMapping alloc]initWithContentUserName:@"phonenumber" And:@"location" And:@"location" And:@"ContentAvatar" And:@"ContentImages"];
             
             contentObject=[_contentMapping mappingContentArray:result];
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -138,9 +143,7 @@ static const CGFloat MJDuration = 2.0;
     ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
 
     if (cell == nil) {
-        
-        cell = [[ContentCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier];
-//        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+        cell = [[ContentCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier boolImage:[self heightCell:indexPath]];//        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         
@@ -152,8 +155,23 @@ static const CGFloat MJDuration = 2.0;
     cell.ContentUserName.text = contentOfCircle.contentUserName;
     cell.ContentText.text = contentOfCircle.contentText;
     cell.ContentPubFrom.text =contentOfCircle.contentPubFrom;
-
+    cell.ContentAvatar.image = [self loadImage:contentOfCircle.contentAvatar];
+    cell.ContentImages.image = [self loadImage:contentOfCircle.contentImages];
     return cell;
+}
+-(BOOL)heightCell:(NSIndexPath *)indexPath
+{
+    NSString* strtemp=[dicheight valueForKey:[NSString stringWithFormat:@"%lu",(unsigned long)[indexPath row]]];
+    if ([strtemp isEqualToString:@"false"]) {
+        return NO;
+    }
+    return YES;
+}
+-(UIImage*)loadImage:(NSString*)pathResource
+{
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:pathResource ofType:@"png"];
+    NSData *image = [NSData dataWithContentsOfFile:filePath];
+    return [UIImage imageWithData:image];
 }
 -(NSInteger) readySource{
     
@@ -168,6 +186,7 @@ static const CGFloat MJDuration = 2.0;
         model.contentText = [[contentObject objectAtIndex:index] objectForKey:@"ContentText"];
         model.contentPubFrom = [[contentObject objectAtIndex:index] objectForKey:@"ContentPubFrom"];
         model.contentAvatar = [[contentObject objectAtIndex:index] objectForKey:@"ContentAvatar"];
+        model.contentImages = [[contentObject objectAtIndex:index] objectForKey:@"ContentImages"];
         [content addObject:model];
         
     }
@@ -187,8 +206,7 @@ static const CGFloat MJDuration = 2.0;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 75;
+       return 300;
 }
 
 
@@ -200,10 +218,6 @@ static const CGFloat MJDuration = 2.0;
 {
     return NO;
 }
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

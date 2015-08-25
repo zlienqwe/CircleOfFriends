@@ -13,4 +13,5 @@
 @property NSString * contentText;
 @property NSString * contentPubFrom;
 @property NSString * contentAvatar;
+@property NSString * contentImages;
 @end
