@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface ContentModel : NSObject
-
 @property NSString * contentUserName;
 @property NSString * contentText;
 @property NSString * contentPubFrom;

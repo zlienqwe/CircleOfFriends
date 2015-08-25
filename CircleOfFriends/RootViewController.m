@@ -47,6 +47,7 @@
     ViewController *viewController = [[ViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
     viewController.title = @"朋友圈";
+    
 
 
 }

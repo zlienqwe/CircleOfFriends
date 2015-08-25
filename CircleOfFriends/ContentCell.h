@@ -10,15 +10,15 @@
 
 @interface ContentCell : UITableViewCell
 
-@property UIImage * ContentAvatar;
+@property UIImageView * ContentAvatar;
 @property UILabel * ContentUserName;
 @property UILabel * ContentPubType;
 @property UILabel * ContentText;
 @property UILabel * ContentLink;
-@property UIImage * ContentImages;
+@property UIImageView * ContentImages;
 @property UILabel * ContentPubTime;
 @property UILabel * ContentPubFrom;
-@property UIImage * ContentReplyIcon;
+@property UIImageView * ContentReplyIcon;
 
 
 @end

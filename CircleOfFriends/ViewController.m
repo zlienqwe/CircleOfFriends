@@ -72,26 +72,19 @@ static const CGFloat MJDuration = 2.0;
     self.ContentTableView.header = header;
 }
 - (void)loadNewData
-{
-    // 1.添加假数据
-    for (int i = 0; i<5; i++) {
+{    for (int i = 0; i<5; i++) {
         [self.data insertObject:MJRandomData atIndex:0];
     }
     
-    // 2.模拟2秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MJDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新表格
         [self.ContentTableView reloadData];
         
-        // 拿到当前的下拉刷新控件，结束刷新状态
         [self.ContentTableView.header endRefreshing];
     });
 }
 - (NSMutableArray *)data
 {
-    if (!_data) {
-        self.data = [NSMutableArray array];
-    }
+
     return _data;
 }
 
@@ -143,8 +136,9 @@ static const CGFloat MJDuration = 2.0;
     
     static NSString *CellWithIdentifier = @"Cell";
     ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
-    
+
     if (cell == nil) {
+        
         cell = [[ContentCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier];
 //        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;

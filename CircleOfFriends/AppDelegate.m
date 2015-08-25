@@ -19,18 +19,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     RootViewController *rootView = [[RootViewController alloc] init];
-    rootView.title = @"首页";
+    rootView.title = @"发现";
     
+
+
     
     self.navigationController = [[UINavigationController alloc] init];
     [self.navigationController pushViewController:rootView animated:YES];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:20/225.0 green:115/225.0 blue:213/225.0 alpha:1.0]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:(0/225.0) green:(0/225.0) blue:(0/225.0) alpha:1.0]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
+    
+    //按钮！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//    UIBarButtonItem *cameraButton=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:nil];
+//    self.navigationController.navigationItem.rightBarButtonItem=cameraButton;
 
+    
+    
+    
     [self.window addSubview:self.navigationController.view];
     [self.window makeKeyAndVisible];
-    return YES;
-    
     // Override point for customization after application launch.
     return YES;
 }
