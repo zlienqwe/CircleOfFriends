@@ -10,14 +10,10 @@
 
 @interface ViewController : UIViewController
 {
-    CGRect _rect;//保存当前物理屏幕大小
+    CGRect _rect;
 }
 @property (nonatomic) UITableView * ContentTableView;
-@property (nonatomic) UITableView * tableView;
-
-
-//@property (nonatomic)
-//顶部导航栏
+@property (strong, nonatomic) NSMutableArray *data;
 
 @end
 

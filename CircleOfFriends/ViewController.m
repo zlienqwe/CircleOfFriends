@@ -12,8 +12,12 @@
 #import "ContentModel.h"
 #import "ReadPlist.h"
 #import "MJRefresh.h"
-#define Local @"content.json"
+static const CGFloat MJDuration = 2.0;
+#define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
+
+//#define Local @"content.json"
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+
 {
     NSMutableArray *contentObject;
     NSMutableArray *content;
@@ -21,6 +25,7 @@
     UIActivityIndicatorView *activityIndicator;
     UIImage * albumCover;
     ReadPlist *readPlist;
+    
 
     
 }
@@ -30,18 +35,64 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupRefresh];
     service=[Service new];
     readPlist = [ReadPlist new];
     [self getUrlData];
     
     
-    
 //    contentObject = [service readJson:Local];
     [self initView];
-
+    [self setupRefresh];
 
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)setupRefresh{
+    
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self loadNewData];
+    }];
+    
+    // 设置自动切换透明度(在导航栏下面自动隐藏)
+    header.automaticallyChangeAlpha = YES;
+    
+    // 隐藏时间
+    header.lastUpdatedTimeLabel.hidden = YES;
+    
+
+    header.stateLabel.hidden = YES;
+
+    // 马上进入刷新状态
+    [header beginRefreshing];
+    
+    // 设置header
+    self.ContentTableView.header = header;
+}
+- (void)loadNewData
+{
+    // 1.添加假数据
+    for (int i = 0; i<5; i++) {
+        [self.data insertObject:MJRandomData atIndex:0];
+    }
+    
+    // 2.模拟2秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MJDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.ContentTableView reloadData];
+        
+        // 拿到当前的下拉刷新控件，结束刷新状态
+        [self.ContentTableView.header endRefreshing];
+    });
+}
+- (NSMutableArray *)data
+{
+    if (!_data) {
+        self.data = [NSMutableArray array];
+    }
+    return _data;
 }
 
 -(void)getUrlData{
@@ -69,8 +120,7 @@
         }
      ];
 }
--(void)setupRefresh{
-}
+
 -(void)initView
 {
     
@@ -78,19 +128,6 @@
     self.ContentTableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
     self.ContentTableView.dataSource = self;
     self.ContentTableView.delegate = self;
-    
-
-    
-    
-    
-//    刷新要用
-    
-//    activityIndicator = [[UIActivityIndicatorView alloc]
-//                         initWithActivityIndicatorStyle:
-//                         UIActivityIndicatorViewStyleWhiteLarge];
-//    activityIndicator.color = [UIColor blackColor];
-    
-    
     
 
 
