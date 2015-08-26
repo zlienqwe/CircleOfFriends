@@ -12,23 +12,22 @@
 #import "ContentModel.h"
 #import "ReadPlist.h"
 #import "MJRefresh.h"
+#import "ContentInfoMapping.h"
 static const CGFloat MJDuration = 2.0;
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
 
 #define Local @"content.json"
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
-
 {
     NSMutableArray *contentObject;
     NSMutableArray *content;
     Service *service;
+    NSMutableArray *info;
     UIActivityIndicatorView *activityIndicator;
     UIImage * albumCover;
     ReadPlist *readPlist;
     NSInteger cellhight;
     NSMutableDictionary* dicheight;
-
-
     
 }
 @end
@@ -43,6 +42,9 @@ static const CGFloat MJDuration = 2.0;
     
     
     contentObject = [service readJson:Local];
+    
+    
+    
     dicheight=[NSMutableDictionary dictionary];
     cellhight=250;
 
@@ -108,7 +110,7 @@ static const CGFloat MJDuration = 2.0;
             id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
             
             //            ContentMapping *_contentMapping = [[ContentMapping alloc]initWithContentUserName:@"ContentUserName" And:@"ContentText" And:@"ContentPubFrom" And:@"ContentAvatar"];
-            ContentMapping *_contentMapping = [[ContentMapping alloc]initWithContentUserName:@"phonenumber" And:@"location" And:@"location" And:@"ContentAvatar" And:@"ContentImages"];
+            ContentMapping *_contentMapping = [[ContentMapping alloc]initWithContentUserName:@"phonenumber" And:@"location" And:@"calltime" And:@"ContentAvatar" And:@"ContentImages" And:@"ContentReply"];
             
             contentObject=[_contentMapping mappingContentArray:result];
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -126,43 +128,42 @@ static const CGFloat MJDuration = 2.0;
     self.ContentTableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
     self.ContentTableView.dataSource = self;
     self.ContentTableView.delegate = self;
-    
-
 
     [self.view addSubview:self.ContentTableView];
     
-
     [self.view addSubview:activityIndicator];
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    
     static NSString *CellWithIdentifier = @"Cell";
     ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:CellWithIdentifier];
+    
+    NSUInteger row = [indexPath row];
+    ContentModel * contentOfCircle=(ContentModel*)[ContentInfoMapping contentInfo:[contentObject objectAtIndex: row]];
 
     if (cell == nil) {
-        cell = [[ContentCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier boolImage:[self heightCell:indexPath]];//        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+        cell = [[ContentCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellWithIdentifier
+boolImage:[self heightCell:contentOfCircle]];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         
     }
-    
-    NSUInteger row = [indexPath row];
-    ContentModel *contentOfCircle = (ContentModel*)[contentObject objectAtIndex:row];
-    
     cell.ContentUserName.text = contentOfCircle.contentUserName;
     cell.ContentText.text = contentOfCircle.contentText;
     cell.ContentPubFrom.text =contentOfCircle.contentPubFrom;
+    if ([self heightCell:contentOfCircle]) {
+                cell.ContentImages.image=[self loadImage:contentOfCircle.contentImages];
+           }
     cell.ContentAvatar.image = [self loadImage:contentOfCircle.contentAvatar];
-    cell.ContentImages.image = [self loadImage:contentOfCircle.contentImages];
+    cell.ContentReplyIcon.image = [self loadImage:@"reply"];
+    cell.ContentReply.text = contentOfCircle.contentReply;
     return cell;
 }
--(BOOL)heightCell:(NSIndexPath *)indexPath
+-(BOOL)heightCell:(ContentModel *)contentInfoList
 {
-    NSString* strtemp=[dicheight valueForKey:[NSString stringWithFormat:@"%lu",(unsigned long)[indexPath row]]];
-    if ([strtemp isEqualToString:@"false"]) {
+    if (contentInfoList.contentImages==nil) {
         return NO;
     }
     return YES;
@@ -173,40 +174,67 @@ static const CGFloat MJDuration = 2.0;
     NSData *image = [NSData dataWithContentsOfFile:filePath];
     return [UIImage imageWithData:image];
 }
--(NSInteger) readySource{
-    
-    NSData * contentData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"content" ofType:@"json"]];
-    
-    NSError * error = nil;
-    contentObject = [NSJSONSerialization JSONObjectWithData:contentData options:NSJSONReadingMutableContainers error:&error];
-    content = [[NSMutableArray alloc] init];
-    for (NSInteger index = 0; index < [contentObject count]; index++) {
-        ContentModel *model = [[ContentModel alloc]init];
-        model.contentUserName = [[contentObject objectAtIndex:index] objectForKey:@"ContentUserName"];
-        model.contentText = [[contentObject objectAtIndex:index] objectForKey:@"ContentText"];
-        model.contentPubFrom = [[contentObject objectAtIndex:index] objectForKey:@"ContentPubFrom"];
-        model.contentAvatar = [[contentObject objectAtIndex:index] objectForKey:@"ContentAvatar"];
-        model.contentImages = [[contentObject objectAtIndex:index] objectForKey:@"ContentImages"];
-        [content addObject:model];
-        
-    }
-    return [contentObject count];
-    
-}
+
+
+//-(NSInteger) readySource{
+//    
+//    NSData * contentData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"content" ofType:@"json"]];
+//    
+//    NSError * error = nil;
+//    contentObject = [NSJSONSerialization JSONObjectWithData:contentData options:NSJSONReadingMutableContainers error:&error];
+//    content = [[NSMutableArray alloc] init];
+//    for (NSInteger index = 0; index < [contentObject count]; index++) {
+//        ContentModel *model = [[ContentModel alloc]init];
+//        model.contentUserName = [[contentObject objectAtIndex:index] objectForKey:@"ContentUserName"];
+//        model.contentText = [[contentObject objectAtIndex:index] objectForKey:@"ContentText"];
+//        model.contentPubFrom = [[contentObject objectAtIndex:index] objectForKey:@"ContentPubFrom"];
+//        model.contentAvatar = [[contentObject objectAtIndex:index] objectForKey:@"ContentAvatar"];
+//        model.contentImages = [[contentObject objectAtIndex:index] objectForKey:@"ContentImages"];
+//
+//        
+//        [content addObject:model];
+//        
+//    }
+//
+//    return [contentObject count];
+//    
+//}
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 280;
+    return 230;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     albumCover= [UIImage imageNamed:@"AlbumCover.png"];
     UIImageView * imageCover = [[UIImageView alloc] initWithImage:albumCover];
     return imageCover;
-    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-       return 300;
+    
+    NSUInteger row = [indexPath row];
+    ContentModel *contentOfCircle=(ContentModel*)[ContentInfoMapping contentInfo:[contentObject objectAtIndex: row]];
+    
+    if (contentOfCircle.contentImages==nil) {
+        cellhight-=160;
+        return cellhight;
+    }
+ 
+    else
+    {
+        cellhight=250;
+    }
+    
+    
+    
+
+    
+    return cellhight;
+    
+    
+
 }
 
 

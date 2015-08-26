@@ -15,25 +15,27 @@
 }
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier boolImage:(BOOL)boolimage{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
     if (self) {
+        
+        
         int ZJHeigth=0;
         // Initialization code
         self.ContentAvatar=[[UIImageView alloc]initWithFrame:CGRectMake(15, ZJHeigth+8, 30, 30)];
         ZJHeigth+=8;
         [self addSubview:self.ContentAvatar];
         
-        
-        
+
         
         self.ContentUserName=[[UILabel alloc]initWithFrame:CGRectMake(52, ZJHeigth, 40, 15)];
-        self.ContentUserName.font = [UIFont italicSystemFontOfSize:15];
+        self.ContentUserName.font = [UIFont italicSystemFontOfSize:12];
         self.ContentUserName.textColor=[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:139.0f/255.0f alpha:0.5];
         ZJHeigth+=20;
         [self addSubview:self.ContentUserName];
         
         self.ContentText=[[UILabel alloc]initWithFrame:CGRectMake(52, ZJHeigth, 160, 15)];
         self.ContentText.numberOfLines = 0;
-
+        
         self.ContentText.font = [UIFont italicSystemFontOfSize:15];
         ZJHeigth+=17;
         [self addSubview:self.ContentText];
@@ -43,26 +45,25 @@
             ZJHeigth+=165;
             [self addSubview:self.ContentImages];
         }
+
+        self.ContentReplyIcon=[[UIImageView alloc]initWithFrame:CGRectMake(250, ZJHeigth-5, 20, 25)];
+        [self addSubview:self.ContentReplyIcon];
         
         
         self.ContentPubFrom = [[UILabel alloc]initWithFrame:CGRectMake(52, ZJHeigth, 60, 10)];
         self.ContentPubFrom.font = [UIFont italicSystemFontOfSize:10];
+        ZJHeigth+= 20;
         [self addSubview:self.ContentPubFrom];
         
-        self.ContentReplyIcon=[[UIImageView alloc]initWithFrame:CGRectMake(325, ZJHeigth, 20, 12)];
-        ZJHeigth+=15;
-        [self addSubview:self.ContentReplyIcon];
+ 
         
-        self.ContentReply = [[UILabel alloc]initWithFrame:CGRectMake(52, ZJHeigth, 290, 20)];
+        self.ContentReply = [[UILabel alloc]initWithFrame:CGRectMake(52, ZJHeigth, 200, 20)];
         self.ContentReply.backgroundColor=[UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:0.5];
-        self.ContentReply.font = [UIFont italicSystemFontOfSize:15];
+        self.ContentReply.numberOfLines = 0;
+        self.ContentReply.font = [UIFont italicSystemFontOfSize:12];
         ZJHeigth+=24;
         [self addSubview:self.ContentReply];
         
-        self.separator = [[UIView alloc] initWithFrame:CGRectMake(0, ZJHeigth, 380, 1)];
-        self.separator.backgroundColor = [UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:0.5];
-        [self addSubview:self.separator];
-
     }
     return self;
 }

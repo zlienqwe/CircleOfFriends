@@ -10,13 +10,14 @@
 
 @implementation ContentInfoMapping
 +(ContentModel*) contentInfo:(NSMutableArray*) contentArray{
-    ContentModel * contentInfo = [ContentModel new];
-    contentInfo.contentUserName=[contentArray valueForKey:@"contentUserName"];
-    contentInfo.contentAvatar=[contentArray valueForKey:@"contentAvatar"];
-    contentInfo.contentText=[contentArray valueForKey:@"contentText"];
-    contentInfo.contentPubFrom=[contentArray valueForKey:@"contentPubFrom"];
-    contentInfo.contentImages = [contentArray valueForKey:@"contentImages"];
-    return contentInfo;
+    ContentModel * contentInfoList = [ContentModel new];
+    contentInfoList.contentUserName=[contentArray valueForKey:@"contentUserName"];
+    contentInfoList.contentAvatar=[contentArray valueForKey:@"contentAvatar"];
+    contentInfoList.contentText=[contentArray valueForKey:@"contentText"];
+    contentInfoList.contentPubFrom=[contentArray valueForKey:@"contentPubFrom"];
+    contentInfoList.contentImages = [contentArray valueForKey:@"contentImages"];
+    contentInfoList.contentReply = [contentArray valueForKey:@"contentReply"];
+    return contentInfoList;
 
     
     

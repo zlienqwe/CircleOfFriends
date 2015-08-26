@@ -15,17 +15,19 @@
 @private NSString* _contentPubFrom;
 @private NSString* _contentAvatar;
 @private NSString* _contentImages;
+@private NSString* _contentReply;
 }
 @end
 
 @implementation ContentMapping
--(ContentMapping *)initWithContentUserName:(NSString *)contentUserName And:(NSString *)contentText And:(NSString *)contentPubFrom And:(NSString *)contentAvatar And:(NSString *)contentImages{
+-(ContentMapping *)initWithContentUserName:(NSString *)contentUserName And:(NSString *)contentText And:(NSString *)contentPubFrom And:(NSString *)contentAvatar And:(NSString *)contentImages And:(NSString *)contentReply{
     if ((self = [super init])) {
         _contentUserName = contentUserName;
         _contentText = contentText;
         _contentPubFrom = contentPubFrom;
         _contentAvatar = contentAvatar;
         _contentImages = contentImages;
+        _contentReply = contentReply;
     }
     return self;
 }
@@ -44,6 +46,7 @@
     content.contentPubFrom = [contentData objectForKey:_contentPubFrom];
     content.contentAvatar = [contentData objectForKey:_contentAvatar];
     content.contentImages = [contentData objectForKey:_contentImages];
+    content.contentReply = [contentData objectForKey:_contentReply];
     return content;
     
 }
