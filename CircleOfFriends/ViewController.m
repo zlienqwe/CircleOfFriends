@@ -130,14 +130,14 @@ static NSString *CellWithIdentifier = @"Cell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 200;
+    return SECTIONHEIGHT;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     
     
-    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 200)];
+    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, SECTIONHEIGHT)];
     headerView.backgroundColor = [UIColor whiteColor];
     
     
@@ -145,7 +145,7 @@ static NSString *CellWithIdentifier = @"Cell";
     imageCover.image = [UIImage imageNamed:@"AlbumCover.png"];
     
     
-    UIImageView * imageAvatar = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH -PADDING - 60, 160, 60, 60)];
+    UIImageView * imageAvatar = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH -PADDING - 60, SECTIONHEIGHT - 40, 60, 60)];
     
     imageAvatar.image = [UIImage imageNamed:@"ImageAvatar"];
     imageAvatar.layer.borderWidth = 2;
@@ -153,7 +153,7 @@ static NSString *CellWithIdentifier = @"Cell";
     
     
     UILabel * userName = [[UILabel alloc] init];
-    userName.frame = CGRectMake(SCREEN_WIDTH-PADDING-imageAvatar.frame.size.width - 45, 180, 45, 18);
+    userName.frame = CGRectMake(SCREEN_WIDTH-PADDING-imageAvatar.frame.size.width - 45, SECTIONHEIGHT - 30, 45, 18);
     userName.textColor = [UIColor whiteColor];
     userName.font = [UIFont boldSystemFontOfSize:16.0];
     userName.text = @"Zlien";
