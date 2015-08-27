@@ -78,30 +78,11 @@
         [self addSubview:self.ContentReplyIcon];
     
         
-        
         self.ContentReply = [[UILabel alloc] init];
         [self addSubview:self.ContentReply];
         self.ContentReply.font = replyFont;
         self.ContentReply.numberOfLines = 0;
         self.ContentReply.textColor=[UIColor blackColor];
-        //
-        //        self.ContentReplyIcon=[[UIImageView alloc]initWithFrame:CGRectMake(250, ZJHeigth-5, 20, 25)];
-        //        [self addSubview:self.ContentReplyIcon];
-        //
-        //
-        //        self.ContentPubFrom = [[UILabel alloc]initWithFrame:CGRectMake(52, ZJHeigth, 60, 10)];
-        //        self.ContentPubFrom.font = [UIFont italicSystemFontOfSize:10];
-        //        ZJHeigth+= 20;
-        //        [self addSubview:self.ContentPubFrom];
-        //
-        //
-        //
-        //        self.ContentReply = [[UILabel alloc]initWithFrame:CGRectMake(52, ZJHeigth, 200, 20)];
-        //        self.ContentReply.backgroundColor=[UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:0.5];
-        //        self.ContentReply.numberOfLines = 0;
-        //        self.ContentReply.font = [UIFont italicSystemFontOfSize:12];
-        //        ZJHeigth+=24;
-        //        [self addSubview:self.ContentReply];
         
     }
     return self;
