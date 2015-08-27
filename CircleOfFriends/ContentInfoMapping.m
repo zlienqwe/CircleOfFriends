@@ -14,7 +14,7 @@
     contentInfoList.contentUserName=[contentArray valueForKey:@"contentUserName"];
     contentInfoList.contentAvatar=[contentArray valueForKey:@"contentAvatar"];
     contentInfoList.contentText=[contentArray valueForKey:@"contentText"];
-    contentInfoList.contentPubFrom=[contentArray valueForKey:@"contentPubFrom"];
+    contentInfoList.contentPubTime=[contentArray valueForKey:@"contentPubTime"];
     contentInfoList.contentImages = [contentArray valueForKey:@"contentImages"];
     contentInfoList.contentReply = [contentArray valueForKey:@"contentReply"];
     return contentInfoList;

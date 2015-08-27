@@ -12,7 +12,7 @@
 @interface ContentMapping(){
 @private NSString* _contentUserName;
 @private NSString* _contentText;
-@private NSString* _contentPubFrom;
+@private NSString* _contentPubTime;
 @private NSString* _contentAvatar;
 @private NSString* _contentImages;
 @private NSString* _contentReply;
@@ -20,11 +20,11 @@
 @end
 
 @implementation ContentMapping
--(ContentMapping *)initWithContentUserName:(NSString *)contentUserName And:(NSString *)contentText And:(NSString *)contentPubFrom And:(NSString *)contentAvatar And:(NSString *)contentImages And:(NSString *)contentReply{
+-(ContentMapping *)initWithContentUserName:(NSString *)contentUserName And:(NSString *)contentText And:(NSString *)contentPubTime And:(NSString *)contentAvatar And:(NSString *)contentImages And:(NSString *)contentReply{
     if ((self = [super init])) {
         _contentUserName = contentUserName;
         _contentText = contentText;
-        _contentPubFrom = contentPubFrom;
+        _contentPubTime = contentPubTime;
         _contentAvatar = contentAvatar;
         _contentImages = contentImages;
         _contentReply = contentReply;
@@ -43,7 +43,7 @@
     ContentModel * content = [ContentModel new];
     content.contentUserName = [contentData objectForKey:_contentUserName];
     content.contentText = [contentData objectForKey:_contentText];
-    content.contentPubFrom = [contentData objectForKey:_contentPubFrom];
+    content.contentPubTime = [contentData objectForKey:_contentPubTime];
     content.contentAvatar = [contentData objectForKey:_contentAvatar];
     content.contentImages = [contentData objectForKey:_contentImages];
     content.contentReply = [contentData objectForKey:_contentReply];

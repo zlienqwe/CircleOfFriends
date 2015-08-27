@@ -1,14 +1,25 @@
 //
-//  Content-Prefix.pch
+//  CircleOfFriends-Prefix.pch
 //  CircleOfFriends
 //
-//  Created by Zlien on 8/24/15.
+//  Created by Zlien on 8/26/15.
 //  Copyright (c) 2015 Zlien. All rights reserved.
 //
 
 #ifndef CircleOfFriends_CircleOfFriends_Prefix_pch
 #define CircleOfFriends_CircleOfFriends_Prefix_pch
 
+
+
+#define usernameFont [UIFont fontWithName:@"STHeitiSC-Medium" size:14]
+#define textFont [UIFont fontWithName:@"STHeitiSC-Medium" size:12]
+#define pubTimeFont [UIFont fontWithName:@"STHeitiSC-Medium" size:10]
+#define replyFont [UIFont fontWithName:@"STHeitiSC-Medium" size:12]
+#define PADDING 8
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
+
+#define Local @"content.json"
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

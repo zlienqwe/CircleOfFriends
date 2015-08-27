@@ -14,7 +14,7 @@
 -(NSMutableArray*)readJson:(NSString*)file
 {
     ReadJson *readJson = [ReadJson new];
-    readJson.contentMapping = [[ContentMapping alloc]initWithContentUserName:@"ContentUserName" And:@"ContentText" And:@"ContentPubFrom" And:@"ContentAvatar" And:@"ContentImages" And:@"ContentReply"];
+    readJson.contentMapping = [[ContentMapping alloc]initWithContentUserName:@"ContentUserName" And:@"ContentText" And:@"ContentPubTime" And:@"ContentAvatar" And:@"ContentImages" And:@"ContentReply"];
     return [readJson localfileWithContentsOfJSONString:file];
 }
 

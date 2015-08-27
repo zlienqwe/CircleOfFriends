@@ -8,20 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class FeedFrame;
+
 @interface ContentCell : UITableViewCell
 
-@property UIImageView * ContentAvatar;
-@property UILabel * ContentUserName;
-@property UILabel * ContentPubType;
-@property UILabel * ContentText;
-@property UILabel * ContentLink;
-@property UIImageView * ContentImages;
-@property UILabel * ContentPubTime;
-@property UILabel * ContentPubFrom;
-@property UIImageView * ContentReplyIcon;
-@property UIImageView * ContentLikeIcon;
-@property UILabel * ContentLikeUserName;
-@property UILabel * ContentReply;
+@property (nonatomic, strong) FeedFrame *feedFrame;
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier boolImage:(BOOL) boolimage;
++ (instancetype)cellWithTableView:(UITableView *)tableView identifier:(NSString *)identifier;
+
 @end

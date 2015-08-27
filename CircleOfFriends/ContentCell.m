@@ -7,117 +7,154 @@
 //
 
 #import "ContentCell.h"
+#import "ContentModel.h"
+#import "FeedFrame.h"
+
+
+@interface ContentCell()
+
+@property (nonatomic, strong) UIImageView * ContentAvatar;
+@property (nonatomic, strong) UILabel * ContentUserName;
+@property (nonatomic,strong) UILabel * ContentPubType;
+@property (nonatomic,strong) UILabel * ContentText;
+@property (nonatomic,strong) UILabel * ContentLink;
+@property (nonatomic,strong) UIImageView * ContentImages;
+@property (nonatomic,strong) UILabel * ContentPubTime;
+@property (nonatomic,strong) UILabel * ContentPubFrom;
+@property (nonatomic,strong) UIImageView * ContentReplyIcon;
+@property (nonatomic,strong) UIImageView * ContentLikeIcon;
+@property (nonatomic,strong) UILabel * ContentLikeUserName;
+@property (nonatomic,strong) UILabel * ContentReply;
+
+@end
 
 @implementation ContentCell
 
-- (void)awakeFromNib {
-    // Initialization code
+
++ (instancetype)cellWithTableView:(UITableView *)tableView identifier:(NSString *)identifier{
+    
+    ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    if (cell == nil) {
+        cell = [[ContentCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    return cell;
 }
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier boolImage:(BOOL)boolimage{
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
         
-        
-        int ZJHeigth=0;
-        // Initialization code
-        self.ContentAvatar=[[UIImageView alloc]initWithFrame:CGRectMake(15, ZJHeigth+8, 30, 30)];
-        ZJHeigth+=8;
+        self.ContentAvatar=[[UIImageView alloc] init];
         [self addSubview:self.ContentAvatar];
         
-
         
-        self.ContentUserName=[[UILabel alloc]initWithFrame:CGRectMake(52, ZJHeigth, 40, 15)];
-        self.ContentUserName.font = [UIFont italicSystemFontOfSize:12];
-        self.ContentUserName.textColor=[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:139.0f/255.0f alpha:0.5];
-        ZJHeigth+=20;
-        [self addSubview:self.ContentUserName];
-        
-        self.ContentText=[[UILabel alloc]initWithFrame:CGRectMake(52, ZJHeigth, 160, 15)];
+        self.ContentText = [[UILabel alloc] init];
+        self.ContentText.font = textFont;
         self.ContentText.numberOfLines = 0;
-        
-        self.ContentText.font = [UIFont italicSystemFontOfSize:15];
-        ZJHeigth+=17;
+        self.ContentText.textColor = [UIColor blackColor];
         [self addSubview:self.ContentText];
         
-        if (boolimage==YES) {
-            self.ContentImages=[[UIImageView alloc]initWithFrame:CGRectMake(52, ZJHeigth, 160, 160)];
-            ZJHeigth+=165;
-            [self addSubview:self.ContentImages];
-        }
+        self.ContentUserName=[[UILabel alloc] init];
+        self.ContentUserName.font = usernameFont;
+        self.ContentUserName.numberOfLines = 0;
+        self.ContentUserName.textColor=[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:139.0f/255.0f alpha:0.5];
+        [self addSubview:self.ContentUserName];
 
-        self.ContentReplyIcon=[[UIImageView alloc]initWithFrame:CGRectMake(250, ZJHeigth-5, 20, 25)];
+        
+        self.ContentImages = [[UIImageView alloc] init];
+        [self addSubview:self.ContentImages];
+        
+        self.ContentPubTime =[[UILabel alloc] init];
+        self.ContentPubTime.font = pubTimeFont;
+        self.ContentPubTime.textColor=[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:0.3];
+        [self addSubview:self.ContentPubTime];
+    
+        
+        self.ContentReplyIcon = [[UIImageView alloc] init];
         [self addSubview:self.ContentReplyIcon];
+    
         
         
-        self.ContentPubFrom = [[UILabel alloc]initWithFrame:CGRectMake(52, ZJHeigth, 60, 10)];
-        self.ContentPubFrom.font = [UIFont italicSystemFontOfSize:10];
-        ZJHeigth+= 20;
-        [self addSubview:self.ContentPubFrom];
-        
- 
-        
-        self.ContentReply = [[UILabel alloc]initWithFrame:CGRectMake(52, ZJHeigth, 200, 20)];
-        self.ContentReply.backgroundColor=[UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:0.5];
-        self.ContentReply.numberOfLines = 0;
-        self.ContentReply.font = [UIFont italicSystemFontOfSize:12];
-        ZJHeigth+=24;
+        self.ContentReply = [[UILabel alloc] init];
         [self addSubview:self.ContentReply];
+        self.ContentReply.font = replyFont;
+        self.ContentReply.numberOfLines = 0;
+        self.ContentReply.textColor=[UIColor blackColor];
+        //
+        //        self.ContentReplyIcon=[[UIImageView alloc]initWithFrame:CGRectMake(250, ZJHeigth-5, 20, 25)];
+        //        [self addSubview:self.ContentReplyIcon];
+        //
+        //
+        //        self.ContentPubFrom = [[UILabel alloc]initWithFrame:CGRectMake(52, ZJHeigth, 60, 10)];
+        //        self.ContentPubFrom.font = [UIFont italicSystemFontOfSize:10];
+        //        ZJHeigth+= 20;
+        //        [self addSubview:self.ContentPubFrom];
+        //
+        //
+        //
+        //        self.ContentReply = [[UILabel alloc]initWithFrame:CGRectMake(52, ZJHeigth, 200, 20)];
+        //        self.ContentReply.backgroundColor=[UIColor colorWithRed:220.0f/255.0f green:220.0f/255.0f blue:220.0f/255.0f alpha:0.5];
+        //        self.ContentReply.numberOfLines = 0;
+        //        self.ContentReply.font = [UIFont italicSystemFontOfSize:12];
+        //        ZJHeigth+=24;
+        //        [self addSubview:self.ContentReply];
         
     }
     return self;
 }
-//- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-//    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-//    
-//    
-//    
-//    
-//    UIImageView *imv = [[UIImageView alloc]initWithFrame:CGRectMake(8,8, 20, 20)];
-////    imv.image=[UIImage imageNamed:@"1.png"];
-//
-//    
-//
-//    
-//    
-//    CGRect ContentUserNameF = CGRectMake(5, 45, 230, 24);
-////    CGRect ContentPubTypeF = CGRectMake(230, 23, 95, 24);
-//    CGRect ContentTextF = CGRectMake(230, 23, 95, 60);
-////    CGRect ContentImagesF = CGRectMake(230, 23, 95, 24);
-////    CGRect ContentPubTimeF = CGRectMake(230, 23, 95, 24);
-//    CGRect ContentPubFromF = CGRectMake(5, 0, 230, 64);
-////    CGRect ContentReplyIconF = CGRectMake(230, 23, 95, 24);
-////    CGRect ContentLikeIconF = CGRectMake(230, 23, 95, 24);
-////    CGRect ContentLikeUserNameF = CGRectMake(230, 23, 95, 24);
-////    CGRect ContentReplyF = CGRectMake(230, 23, 95, 24);
-//
-//    
-//    [self addSubview:imv];
-//
-//    
-//    self.ContentUserName = [[UILabel alloc] initWithFrame:ContentUserNameF];
-//    self.ContentUserName.numberOfLines = 0;
-//    self.ContentUserName.font = [UIFont systemFontOfSize:16];
-//    [self addSubview:self.ContentUserName];
-//    
-//    self.ContentText = [[UILabel alloc] initWithFrame:ContentTextF];
-////自动换行
-//    self.ContentText.numberOfLines = 0;
-//    self.ContentText.textColor = [UIColor redColor];
-//    self.ContentText.font = [UIFont systemFontOfSize:12];
-//    [self addSubview:self.ContentText];
-//    
-//    self.ContentPubFrom = [[UILabel alloc] initWithFrame:ContentPubFromF];
-//    self.ContentPubFrom.font = [UIFont systemFontOfSize:12];
-//    [self addSubview:self.ContentPubFrom];
-//    
-//    return self;
-//    
-//}
+
+- (void) setFeedFrame:(FeedFrame *)feedFrame{
+    
+    _feedFrame = feedFrame;
+    [self settingData];
+    [self settingFrame];
+}
+
+- (void) settingData{
+    
+    ContentModel *content = self.feedFrame.content;
+    
+    self.ContentAvatar.image = [self loadImage:content.contentAvatar];
+    
+    self.ContentUserName.text = content.contentUserName;
+    
+    self.ContentText.text = content.contentText;
+    
+    self.ContentImages.image = [self loadImage:content.contentImages];
+    
+    self.ContentPubTime.text = content.contentPubTime;
+    
+    self.ContentReplyIcon.image = [self loadImage:@"reply"];
+    
+    self.ContentReply.text = content.contentReply;
+}
+
+- (void) settingFrame{
+    
+    self.ContentUserName.frame = self.feedFrame.usernameFrame;
+    self.ContentAvatar.frame = self.feedFrame.avatarFrame;
+    self.ContentText.frame = self.feedFrame.textFrame;
+    self.ContentImages.frame = self.feedFrame.imagesFrame;
+ 
+    self.ContentPubTime.frame = self.feedFrame.pubTimeFrame;
+    self.ContentReplyIcon.frame = self.feedFrame.replyIconFrame;
+    self.ContentReply.frame = self.feedFrame.replyFrame;
+}
+
+-(UIImage*)loadImage:(NSString*)pathResource
+{
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:pathResource ofType:@"png"];
+    NSData *image = [NSData dataWithContentsOfFile:filePath];
+    return [UIImage imageWithData:image];
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
