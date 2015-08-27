@@ -23,6 +23,7 @@ static const CGFloat MJDuration = 2.0;
     NSMutableArray *info;
     UIActivityIndicatorView *activityIndicator;
     UIImage * albumCover;
+    UIImage * selfAvatarImage;
     ReadPlist *readPlist;
     NSInteger cellhight;
     NSMutableDictionary* dicheight;
@@ -133,9 +134,46 @@ static NSString *CellWithIdentifier = @"Cell";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    albumCover= [UIImage imageNamed:@"AlbumCover.png"];
-    UIImageView * imageCover = [[UIImageView alloc] initWithImage:albumCover];
-    return imageCover;
+    
+    
+    
+    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 200)];
+    headerView.backgroundColor = [UIColor whiteColor];
+    
+    
+    UIImageView * imageCover = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, tableView.frame.size.width, headerView.frame.size.height)];
+    imageCover.image = [UIImage imageNamed:@"AlbumCover.png"];
+    
+    
+    UIImageView * imageAvatar = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH -PADDING - 60, 160, 60, 60)];
+    
+    imageAvatar.image = [UIImage imageNamed:@"ImageAvatar"];
+    imageAvatar.layer.borderWidth = 2;
+    imageAvatar.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+    
+    UILabel * userName = [[UILabel alloc] init];
+    userName.frame = CGRectMake(SCREEN_WIDTH-PADDING-imageAvatar.frame.size.width - 45, 180, 45, 18);
+    userName.textColor = [UIColor whiteColor];
+    userName.font = [UIFont boldSystemFontOfSize:16.0];
+    userName.text = @"Zlien";
+    userName.textAlignment = NSTextAlignmentLeft;
+    
+
+    [headerView addSubview:imageCover];
+    [headerView addSubview:userName];
+    [headerView addSubview:imageAvatar];
+
+    
+
+    return headerView;
+    
+    
+    
+    
+//    albumCover= [UIImage imageNamed:@"AlbumCover.png"];
+//    UIImageView * imageCover = [[UIImageView alloc] initWithImage:albumCover];
+//    return imageCover;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

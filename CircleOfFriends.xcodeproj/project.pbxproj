@@ -70,6 +70,7 @@
 		8A3D43F61B8D4E4400B57C15 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D43F51B8D4E4400B57C15 /* like.png */; };
 		8AE438991B8DEAA30076860F /* FeedFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE438981B8DEAA30076860F /* FeedFrame.m */; };
 		8AE4389C1B8EA6D80076860F /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4389B1B8EA6D80076860F /* reply.png */; };
+		8AE438AC1B8EDED10076860F /* ImageAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE438AB1B8EDED10076860F /* ImageAvatar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +185,7 @@
 		8AE438981B8DEAA30076860F /* FeedFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedFrame.m; sourceTree = "<group>"; };
 		8AE4389A1B8E03A40076860F /* CircleOfFriends-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CircleOfFriends-Prefix.pch"; sourceTree = "<group>"; };
 		8AE4389B1B8EA6D80076860F /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
+		8AE438AB1B8EDED10076860F /* ImageAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ImageAvatar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 		8A08898B1B8AA19F0003445D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8AE438AB1B8EDED10076860F /* ImageAvatar.png */,
 				8AE4389B1B8EA6D80076860F /* reply.png */,
 				8A3D43F51B8D4E4400B57C15 /* like.png */,
 				8A088A5C1B8C1F630003445D /* Base */,
@@ -553,6 +556,7 @@
 				8A2AAF381B8C6E160043A127 /* content12.png in Resources */,
 				8A088A591B8C02D50003445D /* URL.plist in Resources */,
 				8A08899C1B8AA19F0003445D /* LaunchScreen.xib in Resources */,
+				8AE438AC1B8EDED10076860F /* ImageAvatar.png in Resources */,
 				8A0889FD1B8B09AE0003445D /* 4.png in Resources */,
 				8A2AAF331B8C6E160043A127 /* content7.png in Resources */,
 				8A2AAF341B8C6E160043A127 /* content8.png in Resources */,
