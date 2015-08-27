@@ -80,6 +80,7 @@
         
         self.ContentReply = [[UILabel alloc] init];
         [self addSubview:self.ContentReply];
+        self.ContentReply.backgroundColor = [UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:0.1];
         self.ContentReply.font = replyFont;
         self.ContentReply.numberOfLines = 0;
         self.ContentReply.textColor=[UIColor blackColor];

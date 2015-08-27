@@ -37,12 +37,12 @@
 
     self.usernameFrame = CGRectMake(PADDING * 2 + avatarWidth, PADDING, usernameLabelW, usernameLabelH);
     
-    CGSize textSize = [self sizeWithString:_content.contentText font:textFont maxSize:CGSizeMake(SCREEN_WIDTH - PADDING * 2 - avatarWidth, MAXFLOAT)];
+    CGSize textSize = [self sizeWithString:_content.contentText font:textFont maxSize:CGSizeMake(SCREEN_WIDTH - PADDING * 3 - avatarWidth, MAXFLOAT)];
     
     CGFloat textLableH = textSize.height;
     CGFloat textLableW = textSize.width;
     
-    self.textFrame = CGRectMake(PADDING * 2 + avatarWidth, PADDING * 2 + usernameLabelH, textLableW - PADDING, textLableH);
+    self.textFrame = CGRectMake(PADDING * 2 + avatarWidth, PADDING * 2 + usernameLabelH, textLableW, textLableH);
     
     
     if (_content.contentImages == nil) {
@@ -63,13 +63,13 @@
     
     self.replyIconFrame = CGRectMake(SCREEN_WIDTH-4 * PADDING, PADDING * 4 + usernameLabelH + textLableH + imagesHeight, replyIconWidth, replyIconHeight);
     
+
     
-    
-    CGSize replySize = [self sizeWithString:_content.contentReply font:replyFont maxSize:CGSizeMake(SCREEN_WIDTH-PADDING*2-avatarWidth, MAXFLOAT)];
+    CGSize replySize = [self sizeWithString:_content.contentReply font:replyFont maxSize:CGSizeMake(SCREEN_WIDTH-PADDING*3-avatarWidth, MAXFLOAT)];
     CGFloat replyLabelH = replySize.height;
     CGFloat replyLabelW = replySize.width;
-        
-    self.replyFrame = CGRectMake(PADDING * 2 + avatarWidth, PADDING * 6 + usernameLabelH + textLableH + imagesHeight , replyLabelW - PADDING, replyLabelH);
+    
+    self.replyFrame = CGRectMake(PADDING * 2 + avatarWidth, PADDING * 6 + usernameLabelH + textLableH + imagesHeight , replyLabelW, replyLabelH);
     
     self.cellHeight = usernameLabelH + textLableH + imagesHeight + pubTimeLabelH + replyLabelH+ 6 * PADDING;
 }

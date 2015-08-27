@@ -14,20 +14,18 @@
 #import "MJRefresh.h"
 #import "ContentInfoMapping.h"
 #import "FeedFrame.h"
-static const CGFloat MJDuration = 2.0;
+#import "LoadContent.h"
+
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     NSMutableArray *contentObject;
 //    NSMutableArray *content;
     Service *service;
-    NSMutableArray *info;
     UIActivityIndicatorView *activityIndicator;
     UIImage * albumCover;
     UIImage * selfAvatarImage;
     ReadPlist *readPlist;
-    NSInteger cellhight;
-    NSMutableDictionary* dicheight;
-    
+    LoadContent * loadContent;
 }
 
 @property (nonatomic, strong) NSMutableArray *statusFrames;
@@ -40,11 +38,19 @@ static NSString *CellWithIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    service=[Service new];
+    service = [Service new];
+    loadContent = [LoadContent new];
 //    readPlist = [ReadPlist new];
 //    [self getUrlData];
     contentObject = [service readJson:Local];
-    
+    [self setFeedFrame];
+    [self.ContentTableView reloadData];
+    [self initTableView];
+    [self initCameraButton];
+    [self initTableViewHeaderView];
+}
+
+-(void)setFeedFrame{
     NSMutableArray *models = [[NSMutableArray alloc] init];
     
     for (ContentModel *content in contentObject) {
@@ -52,22 +58,15 @@ static NSString *CellWithIdentifier = @"Cell";
         feedF.content = content;
         [models addObject:feedF];
     }
-     self.statusFrames = [models mutableCopy];
-     [self.ContentTableView reloadData];
-    
-    dicheight=[NSMutableDictionary dictionary];
-    cellhight=250;
-    [self initTableView];
-    [self setupRefresh];
-    [self initCameraButton];
-    [self initTableViewHeaderView];
-
-    // Do any additional setup after loading the view, typically from a nib.
+    self.statusFrames = [models mutableCopy];
 }
+
 -(void)initCameraButton{
     UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera  target:self action:nil];
     self.navigationItem.rightBarButtonItem = cameraButton;
 }
+
+
 -(void)initTableViewHeaderView{
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 240)];
     headerView.backgroundColor = [UIColor whiteColor];
@@ -95,43 +94,6 @@ static NSString *CellWithIdentifier = @"Cell";
     [headerView addSubview:imageAvatar];
     self.ContentTableView.tableHeaderView = headerView;
 }
--(void)setupRefresh{
-    
-    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
-
-    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-    header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self loadNewData];
-    }];
-    
-    // 设置自动切换透明度(在导航栏下面自动隐藏)
-    header.automaticallyChangeAlpha = YES;
-    
-    // 隐藏时间
-    header.lastUpdatedTimeLabel.hidden = YES;
-    
-
-    header.stateLabel.hidden = YES;
-
-    
-    // 设置header
-    self.ContentTableView.header = header;
-}
-- (void)loadNewData
-{    for (int i = 0; i<5; i++) {
-        [self.data insertObject:MJRandomData atIndex:0];
-    }
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MJDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.ContentTableView reloadData];
-        
-        [self.ContentTableView.header endRefreshing];
-    });
-}
-- (NSMutableArray *)data
-{
-    return _data;
-}
 
 -(void)initTableView
 {
@@ -141,7 +103,15 @@ static NSString *CellWithIdentifier = @"Cell";
     self.ContentTableView.delegate = self;
 
     [self.view addSubview:self.ContentTableView];
+    [loadContent createTableViewFooter:self.ContentTableView];
     
+    activityIndicator = [[UIActivityIndicatorView alloc]
+                         initWithActivityIndicatorStyle:
+                         UIActivityIndicatorViewStyleWhiteLarge];
+    activityIndicator.color = [UIColor redColor];
+    activityIndicator.frame =CGRectMake(15, 75, 40, 40);
+    [self.view addSubview:activityIndicator];
+
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -152,32 +122,36 @@ static NSString *CellWithIdentifier = @"Cell";
     
     return cell;
 }
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-//{
-//    return SECTIONHEIGHT + 20;
-//}
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    
-//    
-//
-//    
-//
-//    return headerView;
-//    
-//    
-//    
-//    
-////    albumCover= [UIImage imageNamed:@"AlbumCover.png"];
-////    UIImageView * imageCover = [[UIImageView alloc] initWithImage:albumCover];
-////    return imageCover;
-//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     FeedFrame *feedF = self.statusFrames[indexPath.row];
     return feedF.cellHeight;
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y<= -60) {
+        [activityIndicator startAnimating];
+        [contentObject removeAllObjects];
+        contentObject=[service readJson:NEW];
+        [self setFeedFrame];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.ContentTableView reloadData];
+
+        });
+      
+        [activityIndicator stopAnimating];
+        
+        return;
+    }
+    contentObject=[service readJson:MORE];
+    [loadContent beginLoadContent:self.ContentTableView Data:contentObject];
+
+    NSLog(@"%@",self.statusFrames);
+
+    
 }
 
 
