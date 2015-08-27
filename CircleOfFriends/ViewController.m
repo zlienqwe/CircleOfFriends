@@ -59,6 +59,8 @@ static NSString *CellWithIdentifier = @"Cell";
     cellhight=250;
 
     [self initTableView];
+    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera  target:self action:nil];
+    self.navigationItem.rightBarButtonItem = cameraButton;
     [self initTableViewHeaderView];
 
     [self setupRefresh];

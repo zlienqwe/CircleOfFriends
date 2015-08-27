@@ -17,8 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
-            // Do any additional setup after loading the view from its nib.
+    
+        // Do any additional setup after loading the view from its nib.
 }
 
 
@@ -27,6 +27,8 @@
     ViewController *viewController = [[ViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
     viewController.title = @"朋友圈";
+    
+    
     
 
 }

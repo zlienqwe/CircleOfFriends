@@ -26,8 +26,19 @@
     
     self.navigationController = [[UINavigationController alloc] init];
     [self.navigationController pushViewController:rootView animated:YES];
+    
+    
+    
+    
+    
+    
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:(0/225.0) green:(0/225.0) blue:(0/225.0) alpha:1.0]];
+    
+    
+    
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     

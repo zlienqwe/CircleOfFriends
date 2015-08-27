@@ -10,5 +10,6 @@
 
 @interface RootViewController : UIViewController
 - (IBAction)goToCircleOfFriends:(id)sender;
+@property UIButton* button;
 
 @end
