@@ -57,15 +57,16 @@ static NSString *CellWithIdentifier = @"Cell";
     
     dicheight=[NSMutableDictionary dictionary];
     cellhight=250;
-
     [self initTableView];
-    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera  target:self action:nil];
-    self.navigationItem.rightBarButtonItem = cameraButton;
+    [self setupRefresh];
+    [self initCameraButton];
     [self initTableViewHeaderView];
 
-    [self setupRefresh];
-
     // Do any additional setup after loading the view, typically from a nib.
+}
+-(void)initCameraButton{
+    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera  target:self action:nil];
+    self.navigationItem.rightBarButtonItem = cameraButton;
 }
 -(void)initTableViewHeaderView{
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 240)];
@@ -112,8 +113,6 @@ static NSString *CellWithIdentifier = @"Cell";
 
     header.stateLabel.hidden = YES;
 
-    // 马上进入刷新状态
-    [header beginRefreshing];
     
     // 设置header
     self.ContentTableView.header = header;
