@@ -32,16 +32,21 @@
 
 
 + (instancetype)cellWithTableView:(UITableView *)tableView identifier:(NSString *)identifier{
-    
     ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
+
     if (cell == nil) {
+    
         cell = [[ContentCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.separatorInset = UIEdgeInsetsZero;
+        [cell setPreservesSuperviewLayoutMargins:NO];
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+
+
     }
-    
     return cell;
 }
+
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
