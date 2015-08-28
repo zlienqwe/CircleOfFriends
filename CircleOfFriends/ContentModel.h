@@ -15,5 +15,5 @@
 @property NSString * contentAvatar;
 @property NSString * contentImages;
 @property NSString * contentReplyIcon;
-@property NSString * contentReply;
+@property NSMutableArray * contentReply;
 @end

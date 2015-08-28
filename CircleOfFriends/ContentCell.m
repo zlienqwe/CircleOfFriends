@@ -34,16 +34,14 @@
 + (instancetype)cellWithTableView:(UITableView *)tableView identifier:(NSString *)identifier{
     ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
 
-    if (cell == nil) {
-    
-        cell = [[ContentCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[ContentCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.separatorInset = UIEdgeInsetsZero;
         [cell setPreservesSuperviewLayoutMargins:NO];
         [cell setLayoutMargins:UIEdgeInsetsZero];
 
 
-    }
+  
     return cell;
 }
 
@@ -116,8 +114,33 @@
     self.ContentPubTime.text = content.contentPubTime;
     
     self.ContentReplyIcon.image = [self loadImage:@"reply"];
+
     
-    self.ContentReply.text = content.contentReply;
+
+    NSMutableArray * lines = content.contentReply;
+    NSUInteger stringCount = [lines count];
+    NSMutableString * string =[NSMutableString new];
+
+    for (NSDictionary * line in lines) {
+        NSLog(@"%lu",(unsigned long)stringCount);
+        NSDictionary * dict = line;
+        NSArray * keys = [dict allKeys];
+        
+        for (NSString * key in keys) {
+            NSString * value = [dict objectForKey:key];
+            [string appendFormat:@"%@:%@ \n", key, value];
+
+//            for (int i = 0; i < stringCount; i++) {
+//                [string stringByAppendingString:@"\n"];
+//                NSLog(@"%@",string);
+//            
+//            }
+
+                    }
+    }
+    
+    self.ContentReply.text = string;
+
 }
 
 - (void) settingFrame{

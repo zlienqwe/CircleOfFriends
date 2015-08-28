@@ -42,8 +42,6 @@ static NSString *CellWithIdentifier = @"Cell";
     [super viewDidLoad];
     service = [Service new];
     loadContent = [LoadContent new];
-//    readPlist = [ReadPlist new];
-//    [self getUrlData];
     contentObject = [service readJson:Local];
     [self setFeedFrame];
     [self.ContentTableView reloadData];
@@ -150,7 +148,7 @@ static NSString *CellWithIdentifier = @"Cell";
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    if (scrollView.contentOffset.y<= -60) {
+   if (scrollView.contentOffset.y<= -60) {
         [activityIndicator startAnimating];
         [contentObject removeAllObjects];
         contentObject=[service readJson:NEW];
@@ -171,6 +169,7 @@ static NSString *CellWithIdentifier = @"Cell";
     }
     [self.statusFrames addObjectsFromArray:models];
     [self.ContentTableView reloadData];
+    
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

@@ -1,60 +1,131 @@
- [{
-    "ContentUserName": "朱江",
-    "ContentAvatar":"3",
-    "ContentImages":"content9",
-    "ContentText": "这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨",
-    "ContentPubFrom": "iPhone",
-    "ContentPubTime": "一小时前",
-    "ContentReply": "李燕子:神经病！qweqweqeqeqwe！"
-},{
+[
+{
     "ContentUserName": "赵乐乐",
-    "ContentAvatar":"2",
-    "ContentText": "这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨",
+    "ContentAvatar": "6",
+    "ContentText": "这是一个安静是一个安静的早晨",
     "ContentPubFrom": "iPhone",
     "ContentPubTime": "一小时前",
-    "ContentReply": "李燕子:神经病！qweqeqeqwqeqwe！",
-    "ContentImages":"content3"
- },{
+    "ContentReply": [
+                     {
+                     "李燕子":"神经wwwwwwwwwwwww病！！"
+                     },
+                     {
+                     "朱江":"哈哈dddddddddddd哈"
+                     }
+                     ],
+    "ContentImages": "content11"
+},
+{
+    "ContentUserName": "赵乐乐",
+    "ContentAvatar": "7",
+    "ContentText": "晨这是一个安静的早晨",
+    "ContentPubFrom": "iPhone",
+    "ContentPubTime": "一小时前",
+    "ContentReply": [
+                     {
+                     "李燕子": "神经病！！"
+                     },
+                     {
+                     "朱江": "哈哈哈"
+                     }
+                     ],
+    "ContentImages": "content12"
+ },
+ {
  "ContentUserName": "赵乐乐",
- "ContentAvatar":"7",
- "ContentText": "这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨",
+ "ContentAvatar": "7",
+ "ContentText": "晨这是一个安静的早晨",
  "ContentPubFrom": "iPhone",
  "ContentPubTime": "一小时前",
- "ContentReply": "李燕子:神经病！qweqeqeqweqe！",
- "ContentImages":"content7"
- },{
+ "ContentReply": [
+                  {
+                  "李燕子": "神经病！！"
+                  },
+                  {
+                  "朱江": "哈哈哈"
+                  }
+                  ],
+ "ContentImages": "content12"
+ },
+ {
  "ContentUserName": "赵乐乐",
- "ContentAvatar":"3",
- "ContentText": "这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨",
+ "ContentAvatar": "7",
+ "ContentText": "晨这是一个安静的早晨",
  "ContentPubFrom": "iPhone",
  "ContentPubTime": "一小时前",
- "ContentReply": "李燕子:神经病！qweqeqeqeqe！",
- "ContentImages":"content8"
- },{
+ "ContentReply": [
+                  {
+                  "李燕子": "神经病！！"
+                  },
+                  {
+                  "朱江": "哈哈哈"
+                  }
+                  ],
+ "ContentImages": "content12"
+ },
+ {
  "ContentUserName": "赵乐乐",
- "ContentAvatar":"4",
- "ContentText": "这是这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨",
+ "ContentAvatar": "7",
+ "ContentText": "晨这是一个安静的早晨",
  "ContentPubFrom": "iPhone",
  "ContentPubTime": "一小时前",
- "ContentReply": "李燕子:神经病！qweqeqeqeqe！",
- "ContentImages":"content9"
- },{
- 
+ "ContentReply": [
+                  {
+                  "李燕子": "神经病！！"
+                  },
+                  {
+                  "朱江": "哈哈哈"
+                  }
+                  ],
+ "ContentImages": "content12"
+ },
+ {
  "ContentUserName": "赵乐乐",
- "ContentAvatar":"5",
- "ContentText": "这是一个安静的早晨这是一个安静的早晨这是静的早晨这是一个安静的早晨这是一个安静的早晨",
+ "ContentAvatar": "7",
+ "ContentText": "晨这是一个安静的早晨",
  "ContentPubFrom": "iPhone",
  "ContentPubTime": "一小时前",
- "ContentReply":"李燕子：有病啊！qweqeqeqeqe",
- "ContentImages":"content10"
- },{
- 
+ "ContentReply": [
+                  {
+                  "李燕子": "神经病！！"
+                  },
+                  {
+                  "朱江": "哈哈哈"
+                  }
+                  ],
+ "ContentImages": "content12"
+ },
+ {
  "ContentUserName": "赵乐乐",
- "ContentAvatar":"6",
- "ContentText": "这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨这是一个安静的早晨",
+ "ContentAvatar": "7",
+ "ContentText": "晨这是一个安静的早晨",
  "ContentPubFrom": "iPhone",
  "ContentPubTime": "一小时前",
- "ContentReply": "李燕子:神经病！qweqeqeqeqe！"
- 
- 
- }]
+ "ContentReply": [
+                  {
+                  "李燕子": "神经病！！"
+                  },
+                  {
+                  "朱江": "哈哈哈"
+                  }
+                  ],
+ "ContentImages": "content12"
+ },
+ {
+ "ContentUserName": "赵乐乐",
+ "ContentAvatar": "7",
+ "ContentText": "晨这是一个安静的早晨",
+ "ContentPubFrom": "iPhone",
+ "ContentPubTime": "一小时前",
+ "ContentReply": [
+                  {
+                  "李燕子": "神经病！！"
+                  },
+                  {
+                  "朱江": "哈哈哈"
+                  }
+                  ],
+ "ContentImages": "content12"
+ }
+
+]

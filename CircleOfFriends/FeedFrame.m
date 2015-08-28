@@ -8,6 +8,7 @@
 
 #import "FeedFrame.h"
 #import "ContentModel.h"
+#import "ContentCell.h"
 
 
 
@@ -62,24 +63,42 @@
     
     
     self.replyIconFrame = CGRectMake(SCREEN_WIDTH-4 * PADDING, PADDING * 4 + usernameLabelH + textLableH + imagesHeight, replyIconWidth, replyIconHeight);
-    
 
-    
-    CGSize replySize = [self sizeWithString:_content.contentReply font:replyFont maxSize:CGSizeMake(SCREEN_WIDTH-PADDING*3-avatarWidth, MAXFLOAT)];
-    CGFloat replyLabelH = replySize.height;
-    CGFloat replyLabelW = replySize.width;
-    
+    self.cellHeight = usernameLabelH + textLableH + imagesHeight + pubTimeLabelH + 6 * PADDING;
+    NSMutableArray * lines = _content.contentReply;
+    NSInteger stringCount = 0;
+    CGFloat replyLabelH = 0.0;
+    CGFloat replyLabelW = 0.0;
+    for (NSMutableDictionary * line in lines) {
+        NSDictionary * dict = line;
+        NSArray * keys = [dict allKeys];
+        
+        
+        stringCount = [lines count];
+        for (NSString * key in keys) {
+            
+            NSString * value = [dict objectForKey:key];
+            NSString * string = [[key stringByAppendingString:@":"] stringByAppendingString:value];
+            CGSize replySize = [self sizeWithString:string font:replyFont maxSize:CGSizeMake(SCREEN_WIDTH-PADDING*3-avatarWidth, MAXFLOAT)];
+            replyLabelH = replySize.height;
+            replyLabelW = replySize.width;
+        }
+    }
+    self.cellHeight += replyLabelH*stringCount;
+    replyLabelH = replyLabelH*stringCount;
+
     self.replyFrame = CGRectMake(PADDING * 2 + avatarWidth, PADDING * 6 + usernameLabelH + textLableH + imagesHeight , replyLabelW, replyLabelH);
     
-    self.cellHeight = usernameLabelH + textLableH + imagesHeight + pubTimeLabelH + replyLabelH+ 6 * PADDING;
+    
+//    self.cellHeight = usernameLabelH + textLableH + imagesHeight + pubTimeLabelH + replyLabelH+ 6 * PADDING;
 }
-
 
 - (CGSize)sizeWithString:(NSString *)str font:(UIFont *)font maxSize:(CGSize)maxSize
 {
     NSDictionary *dict = @{NSFontAttributeName : font};
 
     CGSize size =  [str boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size;
+
     return size;
 }
 

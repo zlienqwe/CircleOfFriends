@@ -36,7 +36,7 @@
 -(void)createTableViewFooter:(UITableView *)tableview{
     UIView *tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableview.bounds.size.width, 30)];
     
-    UILabel *loadMoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,120,20)];
+    UILabel *loadMoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,20,60,20)];
     [loadMoreLabel setCenter:tableFooterView.center];
     [loadMoreLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:14]];
     [loadMoreLabel setText:@"加载中..."];
