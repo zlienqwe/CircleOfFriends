@@ -15,22 +15,16 @@
 
 @implementation RootViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
-        // Do any additional setup after loading the view from its nib.
 }
 
-
-
-- (IBAction)goToCircleOfFriends:(id)sender {
+- (IBAction)goToCircleOfFriends:(id)sender
+{
     ViewController *viewController = [[ViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
     viewController.title = @"朋友圈";
-    
-    
-    
-
 }
 
 /*
@@ -42,8 +36,9 @@
  // Pass the selected object to the new view controller.
  }
  */
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
 @end

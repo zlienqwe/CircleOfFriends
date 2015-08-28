@@ -29,7 +29,6 @@
 
 -(void)loadingData:(UITableView*) tableview Data:(NSMutableArray*) arrayData
 {
-    [arrayData addObjectsFromArray:[[Service new] readJson:MORE]];
     [tableview reloadData];
     [self createTableViewFooter:tableview];
 }
