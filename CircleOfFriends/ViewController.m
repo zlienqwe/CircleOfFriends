@@ -11,11 +11,10 @@
 #import "ContentCell.h"
 #import "ContentModel.h"
 #import "ReadPlist.h"
-#import "MJRefresh.h"
 #import "ContentInfoMapping.h"
 #import "FeedFrame.h"
 #import "LoadContent.h"
-
+#import "MJRefresh.h"
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     NSMutableArray *contentObject;
@@ -48,7 +47,36 @@ static NSString *CellWithIdentifier = @"Cell";
     [self initTableView];
     [self initCameraButton];
     [self initTableViewHeaderView];
+    [self setupRefresh];
+
 }
+-(void)setupRefresh{
+        MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+        header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+                [self loadNewData];
+            }];
+        header.automaticallyChangeAlpha = YES;
+        header.lastUpdatedTimeLabel.hidden = YES;
+        header.stateLabel.hidden = YES;
+        self.ContentTableView.header = header;
+    }
+
+- (void)loadNewData
+{
+        for (int i = 0; i<5; i++) {
+                [self.data insertObject:MJRandomData atIndex:0];
+            }
+
+                [self.ContentTableView reloadData];
+           [self.ContentTableView.header endRefreshing];
+    }
+- (NSMutableArray *)data
+{
+        if (!_data) {
+                self.data = [NSMutableArray array];
+            }
+        return _data;
+    }
 
 -(void)setFeedFrame{
     NSMutableArray *models = [[NSMutableArray alloc] init];
@@ -141,7 +169,6 @@ static NSString *CellWithIdentifier = @"Cell";
             [self.ContentTableView reloadData];
 
         });
-      
         [activityIndicator stopAnimating];
         
         return;
@@ -149,16 +176,14 @@ static NSString *CellWithIdentifier = @"Cell";
     contentObject=[service readJson:MORE];
     [loadContent beginLoadContent:self.ContentTableView Data:contentObject];
 
-    NSLog(@"%@",self.statusFrames);
 
-    
+
 }
 
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.statusFrames.count;
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
