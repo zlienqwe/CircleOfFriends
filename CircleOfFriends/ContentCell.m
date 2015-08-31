@@ -10,7 +10,6 @@
 #import "ContentModel.h"
 #import "FeedFrame.h"
 
-
 @interface ContentCell()
 
 @property (nonatomic, strong) UIImageView * contentAvatar;
@@ -67,11 +66,11 @@
         [self addSubview:self.contentReplyIcon];
     
         self.contentReply = [[UILabel alloc] init];
-        [self addSubview:self.contentReply];
         self.contentReply.backgroundColor = [UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:0.1];
         self.contentReply.font = replyFont;
         self.contentReply.numberOfLines = 0;
         self.contentReply.textColor=[UIColor blackColor];
+        [self addSubview:self.contentReply];
     }
     return self;
 }
@@ -101,7 +100,7 @@
         for (NSString * key in keys) {
             NSString * value = [dict objectForKey:key];
             [string appendFormat:@"%@:%@ \n", key, value];
-                    }
+        }
     }
     self.contentReply.text = string;
 }

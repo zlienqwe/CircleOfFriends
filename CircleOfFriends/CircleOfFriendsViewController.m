@@ -177,7 +177,6 @@ static NSString *cellWithIdentifier = @"Cell";
         return;
     }
     contentObject=[readJsonFileService readJsonFile:MoreContentJsonFile];
-
     models = [[NSMutableArray alloc] init];
     for (ContentModel *content in contentObject) {
         FeedFrame *feedF = [[FeedFrame alloc] init];

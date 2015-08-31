@@ -40,7 +40,7 @@
 
 -(NSMutableArray*)mappingContentArray:(NSArray *)contentArray
 {
-    NSMutableArray *array= [[NSMutableArray alloc]init];
+    NSMutableArray *array= [[NSMutableArray alloc] init];
     [contentArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         ContentModel *content = [self mappingContent:obj];
         [array addObject:content];
