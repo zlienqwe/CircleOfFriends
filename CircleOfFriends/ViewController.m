@@ -16,7 +16,7 @@
 #import "LoadContent.h"
 #import "MJRefresh.h"
 
-static NSString *CellWithIdentifier = @"Cell";
+static NSString *cellWithIdentifier = @"Cell";
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -44,7 +44,7 @@ static NSString *CellWithIdentifier = @"Cell";
     loadContent = [LoadContent new];
     contentObject = [service readJson:Local];
     [self setFeedFrame];
-    [self.ContentTableView reloadData];
+    [self.contentTableView reloadData];
     [self initTableView];
     [self initCameraButton];
     [self initTableViewHeaderView];
@@ -58,7 +58,7 @@ static NSString *CellWithIdentifier = @"Cell";
         header.automaticallyChangeAlpha = YES;
         header.lastUpdatedTimeLabel.hidden = YES;
         header.stateLabel.hidden = YES;
-        self.ContentTableView.header = header;
+        self.contentTableView.header = header;
 }
 
 - (void)loadNewData
@@ -66,8 +66,8 @@ static NSString *CellWithIdentifier = @"Cell";
         for (int i = 0; i<5; i++) {
                 [self.data insertObject:MJRandomData atIndex:0];
         }
-                [self.ContentTableView reloadData];
-           [self.ContentTableView.header endRefreshing];
+                [self.contentTableView reloadData];
+           [self.contentTableView.header endRefreshing];
 }
 
 - (NSMutableArray *)data
@@ -114,17 +114,17 @@ static NSString *CellWithIdentifier = @"Cell";
     [headerView addSubview:imageView];
     [headerView addSubview:userName];
     [headerView addSubview:imageAvatar];
-    self.ContentTableView.tableHeaderView = headerView;
+    self.contentTableView.tableHeaderView = headerView;
 }
 
 -(void)initTableView
 {
     CGRect frame=CGRectMake(0, -50, 320, self.view.frame.size.height+90);
-    self.ContentTableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
-    self.ContentTableView.dataSource = self;
-    self.ContentTableView.delegate = self;
-    [self.view addSubview:self.ContentTableView];
-    [loadContent createTableViewFooter:self.ContentTableView];
+    self.contentTableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
+    self.contentTableView.dataSource = self;
+    self.contentTableView.delegate = self;
+    [self.view addSubview:self.contentTableView];
+    [loadContent createTableViewFooter:self.contentTableView];
     activityIndicator = [[UIActivityIndicatorView alloc]
                          initWithActivityIndicatorStyle:
                          UIActivityIndicatorViewStyleWhiteLarge];
@@ -154,7 +154,7 @@ static NSString *CellWithIdentifier = @"Cell";
         contentObject=[service readJson:NEW];
         [self setFeedFrame];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.ContentTableView reloadData];
+            [self.contentTableView reloadData];
         });
         [activityIndicator stopAnimating];
         return;
@@ -168,7 +168,7 @@ static NSString *CellWithIdentifier = @"Cell";
         [models addObject:feedF];
     }
     [self.statusFrames addObjectsFromArray:models];
-    [self.ContentTableView reloadData];
+    [self.contentTableView reloadData];
     
 }
 

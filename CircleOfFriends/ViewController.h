@@ -13,7 +13,7 @@
     CGRect _rect;
 }
 
-@property (nonatomic) UITableView * ContentTableView;
+@property (nonatomic) UITableView * contentTableView;
 @property (strong, nonatomic) NSMutableArray *data;
 
 @end

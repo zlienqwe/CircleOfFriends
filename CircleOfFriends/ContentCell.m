@@ -13,18 +13,14 @@
 
 @interface ContentCell()
 
-@property (nonatomic, strong) UIImageView * ContentAvatar;
-@property (nonatomic, strong) UILabel * ContentUserName;
-@property (nonatomic,strong) UILabel * ContentPubType;
-@property (nonatomic,strong) UILabel * ContentText;
-@property (nonatomic,strong) UILabel * ContentLink;
-@property (nonatomic,strong) UIImageView * ContentImages;
-@property (nonatomic,strong) UILabel * ContentPubTime;
-@property (nonatomic,strong) UILabel * ContentPubFrom;
-@property (nonatomic,strong) UIImageView * ContentReplyIcon;
-@property (nonatomic,strong) UIImageView * ContentLikeIcon;
-@property (nonatomic,strong) UILabel * ContentLikeUserName;
-@property (nonatomic,strong) UILabel * ContentReply;
+@property (nonatomic, strong) UIImageView * contentAvatar;
+@property (nonatomic, strong) UILabel * contentUserame;
+@property (nonatomic,strong) UILabel * contentPubType;
+@property (nonatomic,strong) UILabel * contentText;
+@property (nonatomic,strong) UIImageView * contentImages;
+@property (nonatomic,strong) UILabel * contentPubTime;
+@property (nonatomic,strong) UIImageView * contentReplyIcon;
+@property (nonatomic,strong) UILabel * contentReply;
 
 @end
 
@@ -51,42 +47,42 @@
     
     if (self) {
         
-        self.ContentAvatar=[[UIImageView alloc] init];
-        [self addSubview:self.ContentAvatar];
+        self.contentAvatar=[[UIImageView alloc] init];
+        [self addSubview:self.contentAvatar];
         
         
-        self.ContentText = [[UILabel alloc] init];
-        self.ContentText.font = textFont;
-        self.ContentText.numberOfLines = 0;
-        self.ContentText.textColor = [UIColor blackColor];
-        [self addSubview:self.ContentText];
+        self.contentText = [[UILabel alloc] init];
+        self.contentText.font = textFont;
+        self.contentText.numberOfLines = 0;
+        self.contentText.textColor = [UIColor blackColor];
+        [self addSubview:self.contentText];
         
-        self.ContentUserName=[[UILabel alloc] init];
-        self.ContentUserName.font = usernameFont;
-        self.ContentUserName.numberOfLines = 0;
-        self.ContentUserName.textColor=[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:139.0f/255.0f alpha:0.5];
-        [self addSubview:self.ContentUserName];
+        self.contentUserame=[[UILabel alloc] init];
+        self.contentUserame.font = usernameFont;
+        self.contentUserame.numberOfLines = 0;
+        self.contentUserame.textColor=[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:139.0f/255.0f alpha:0.5];
+        [self addSubview:self.contentUserame];
 
         
-        self.ContentImages = [[UIImageView alloc] init];
-        [self addSubview:self.ContentImages];
+        self.contentImages = [[UIImageView alloc] init];
+        [self addSubview:self.contentImages];
         
-        self.ContentPubTime =[[UILabel alloc] init];
-        self.ContentPubTime.font = pubTimeFont;
-        self.ContentPubTime.textColor=[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:0.3];
-        [self addSubview:self.ContentPubTime];
+        self.contentPubTime =[[UILabel alloc] init];
+        self.contentPubTime.font = pubTimeFont;
+        self.contentPubTime.textColor=[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:0.3];
+        [self addSubview:self.contentPubTime];
     
         
-        self.ContentReplyIcon = [[UIImageView alloc] init];
-        [self addSubview:self.ContentReplyIcon];
+        self.contentReplyIcon = [[UIImageView alloc] init];
+        [self addSubview:self.contentReplyIcon];
     
         
-        self.ContentReply = [[UILabel alloc] init];
-        [self addSubview:self.ContentReply];
-        self.ContentReply.backgroundColor = [UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:0.1];
-        self.ContentReply.font = replyFont;
-        self.ContentReply.numberOfLines = 0;
-        self.ContentReply.textColor=[UIColor blackColor];
+        self.contentReply = [[UILabel alloc] init];
+        [self addSubview:self.contentReply];
+        self.contentReply.backgroundColor = [UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:0.1];
+        self.contentReply.font = replyFont;
+        self.contentReply.numberOfLines = 0;
+        self.contentReply.textColor=[UIColor blackColor];
         
     }
     return self;
@@ -103,17 +99,17 @@
     
     ContentModel *content = self.feedFrame.content;
     
-    self.ContentAvatar.image = [self loadImage:content.contentAvatar];
+    self.contentAvatar.image = [self loadImage:content.contentAvatar];
     
-    self.ContentUserName.text = content.contentUserName;
+    self.contentUserame.text = content.contentUserName;
     
-    self.ContentText.text = content.contentText;
+    self.contentText.text = content.contentText;
     
-    self.ContentImages.image = [self loadImage:content.contentImages];
+    self.contentImages.image = [self loadImage:content.contentImages];
     
-    self.ContentPubTime.text = content.contentPubTime;
+    self.contentPubTime.text = content.contentPubTime;
     
-    self.ContentReplyIcon.image = [self loadImage:@"reply"];
+    self.contentReplyIcon.image = [self loadImage:@"reply"];
 
     
 
@@ -139,20 +135,20 @@
                     }
     }
     
-    self.ContentReply.text = string;
+    self.contentReply.text = string;
 
 }
 
 - (void) settingFrame{
     
-    self.ContentUserName.frame = self.feedFrame.usernameFrame;
-    self.ContentAvatar.frame = self.feedFrame.avatarFrame;
-    self.ContentText.frame = self.feedFrame.textFrame;
-    self.ContentImages.frame = self.feedFrame.imagesFrame;
+    self.contentUserame.frame = self.feedFrame.usernameFrame;
+    self.contentAvatar.frame = self.feedFrame.avatarFrame;
+    self.contentText.frame = self.feedFrame.textFrame;
+    self.contentImages.frame = self.feedFrame.imagesFrame;
  
-    self.ContentPubTime.frame = self.feedFrame.pubTimeFrame;
-    self.ContentReplyIcon.frame = self.feedFrame.replyIconFrame;
-    self.ContentReply.frame = self.feedFrame.replyFrame;
+    self.contentPubTime.frame = self.feedFrame.pubTimeFrame;
+    self.contentReplyIcon.frame = self.feedFrame.replyIconFrame;
+    self.contentReply.frame = self.feedFrame.replyFrame;
 }
 
 -(UIImage*)loadImage:(NSString*)pathResource
