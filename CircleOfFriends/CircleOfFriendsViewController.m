@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Zlien. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "Service.h"
+#import "CircleOfFriendsViewController.h"
+#import "ReadJsonFileService.h"
 #import "ContentCell.h"
 #import "ContentModel.h"
 #import "ContentInfoMapping.h"
@@ -17,10 +17,10 @@
 
 static NSString *cellWithIdentifier = @"Cell";
 
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface CircleOfFriendsViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     NSMutableArray *contentObject;
-    Service *service;
+    ReadJsonFileService *service;
     UIActivityIndicatorView *activityIndicator;
     UIImage * albumCover;
     UIImage * selfAvatarImage;
@@ -32,7 +32,7 @@ static NSString *cellWithIdentifier = @"Cell";
 
 @end
 
-@implementation ViewController
+@implementation CircleOfFriendsViewController
 
 
 - (void)viewDidLoad
@@ -41,7 +41,7 @@ static NSString *cellWithIdentifier = @"Cell";
     [self initCameraButton];
     [self initTableView];
     [self initTableViewHeaderView];
-    service = [Service new];
+    service = [ReadJsonFileService new];
     contentObject = [service readJson:Local];
     [self setFeedFrame];
     loadContent = [LoadContent new];

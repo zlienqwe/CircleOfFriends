@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UIViewController
+
 - (IBAction)goToCircleOfFriends:(id)sender;
 @property UIButton* button;
 

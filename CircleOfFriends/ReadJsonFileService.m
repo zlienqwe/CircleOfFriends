@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Zlien. All rights reserved.
 //
 
-#import "Service.h"
+#import "ReadJsonFileService.h"
 #import "ContentMapping.h"
 
-@implementation Service
+@implementation ReadJsonFileService
 
 -(NSMutableArray*)readJson:(NSString*)file
 {

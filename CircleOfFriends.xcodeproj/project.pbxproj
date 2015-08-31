@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		8A08898E1B8AA19F0003445D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A08898D1B8AA19F0003445D /* main.m */; };
 		8A0889911B8AA19F0003445D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0889901B8AA19F0003445D /* AppDelegate.m */; };
-		8A0889941B8AA19F0003445D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0889931B8AA19F0003445D /* ViewController.m */; };
+		8A0889941B8AA19F0003445D /* CircleOfFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0889931B8AA19F0003445D /* CircleOfFriendsViewController.m */; };
 		8A0889971B8AA19F0003445D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0889951B8AA19F0003445D /* Main.storyboard */; };
 		8A0889991B8AA19F0003445D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A0889981B8AA19F0003445D /* Images.xcassets */; };
 		8A08899C1B8AA19F0003445D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A08899A1B8AA19F0003445D /* LaunchScreen.xib */; };
 		8A0889A81B8AA19F0003445D /* CircleOfFriendsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0889A71B8AA19F0003445D /* CircleOfFriendsTests.m */; };
-		8A0889C61B8AB3E00003445D /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0889C51B8AB3E00003445D /* Service.m */; };
+		8A0889C61B8AB3E00003445D /* ReadJsonFileService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0889C51B8AB3E00003445D /* ReadJsonFileService.m */; };
 		8A0889D21B8AB5BA0003445D /* ContentMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0889D11B8AB5BA0003445D /* ContentMapping.m */; };
 		8A0889D51B8AB8680003445D /* ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0889D41B8AB8680003445D /* ContentModel.m */; };
 		8A0889F11B8B02CD0003445D /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0889F01B8B02CD0003445D /* ContentCell.m */; };
@@ -88,8 +88,8 @@
 		8A08898D1B8AA19F0003445D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8A08898F1B8AA19F0003445D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8A0889901B8AA19F0003445D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8A0889921B8AA19F0003445D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8A0889931B8AA19F0003445D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8A0889921B8AA19F0003445D /* CircleOfFriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleOfFriendsViewController.h; sourceTree = "<group>"; };
+		8A0889931B8AA19F0003445D /* CircleOfFriendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleOfFriendsViewController.m; sourceTree = "<group>"; };
 		8A0889961B8AA19F0003445D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A0889981B8AA19F0003445D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8A08899B1B8AA19F0003445D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -97,8 +97,8 @@
 		8A0889A61B8AA19F0003445D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A0889A71B8AA19F0003445D /* CircleOfFriendsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleOfFriendsTests.m; sourceTree = "<group>"; };
 		8A0889BA1B8AA3080003445D /* ContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCell.h; sourceTree = "<group>"; };
-		8A0889C41B8AB3E00003445D /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
-		8A0889C51B8AB3E00003445D /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
+		8A0889C41B8AB3E00003445D /* ReadJsonFileService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadJsonFileService.h; sourceTree = "<group>"; };
+		8A0889C51B8AB3E00003445D /* ReadJsonFileService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadJsonFileService.m; sourceTree = "<group>"; };
 		8A0889C71B8AB3FC0003445D /* ReadJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadJson.h; sourceTree = "<group>"; };
 		8A0889D01B8AB5BA0003445D /* ContentMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentMapping.h; sourceTree = "<group>"; };
 		8A0889D11B8AB5BA0003445D /* ContentMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentMapping.m; sourceTree = "<group>"; };
@@ -308,8 +308,8 @@
 			children = (
 				8A0889C71B8AB3FC0003445D /* ReadJson.h */,
 				8A088A111B8B36240003445D /* ReadJson.m */,
-				8A0889C41B8AB3E00003445D /* Service.h */,
-				8A0889C51B8AB3E00003445D /* Service.m */,
+				8A0889C41B8AB3E00003445D /* ReadJsonFileService.h */,
+				8A0889C51B8AB3E00003445D /* ReadJsonFileService.m */,
 				8A0889D01B8AB5BA0003445D /* ContentMapping.h */,
 				8A0889D11B8AB5BA0003445D /* ContentMapping.m */,
 				8A2AAF1D1B8C6B520043A127 /* ContentInfoMapping.h */,
@@ -346,8 +346,8 @@
 		8A088A051B8B22420003445D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8A0889921B8AA19F0003445D /* ViewController.h */,
-				8A0889931B8AA19F0003445D /* ViewController.m */,
+				8A0889921B8AA19F0003445D /* CircleOfFriendsViewController.h */,
+				8A0889931B8AA19F0003445D /* CircleOfFriendsViewController.m */,
 				8A088A0C1B8B27340003445D /* RootViewController.h */,
 				8A088A0D1B8B27340003445D /* RootViewController.m */,
 			);
@@ -608,13 +608,13 @@
 				8AABF4341B8FEBF100263B00 /* MJRefreshFooter.m in Sources */,
 				8A088A121B8B36240003445D /* ReadJson.m in Sources */,
 				8AABF4591B8FEC0C00263B00 /* MJRefreshBackStateFooter.m in Sources */,
-				8A0889941B8AA19F0003445D /* ViewController.m in Sources */,
+				8A0889941B8AA19F0003445D /* CircleOfFriendsViewController.m in Sources */,
 				8A0889911B8AA19F0003445D /* AppDelegate.m in Sources */,
 				8A08898E1B8AA19F0003445D /* main.m in Sources */,
 				8AABF4541B8FEC0C00263B00 /* MJRefreshAutoGifFooter.m in Sources */,
 				8AABF4561B8FEC0C00263B00 /* MJRefreshAutoStateFooter.m in Sources */,
 				8A2AAF1F1B8C6B520043A127 /* ContentInfoMapping.m in Sources */,
-				8A0889C61B8AB3E00003445D /* Service.m in Sources */,
+				8A0889C61B8AB3E00003445D /* ReadJsonFileService.m in Sources */,
 				8AABF4311B8FEBF100263B00 /* MJRefreshAutoFooter.m in Sources */,
 				8A088A0F1B8B27340003445D /* RootViewController.m in Sources */,
 				8AABF4571B8FEC0C00263B00 /* MJRefreshBackGifFooter.m in Sources */,

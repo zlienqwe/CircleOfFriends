@@ -7,7 +7,7 @@
 //
 
 #import "RootViewController.h"
-#import "ViewController.h"
+#import "CircleOfFriendsViewController.h"
 
 @interface RootViewController ()
 
@@ -22,7 +22,7 @@
 
 - (IBAction)goToCircleOfFriends:(id)sender
 {
-    ViewController *viewController = [[ViewController alloc] init];
+    CircleOfFriendsViewController *viewController = [[CircleOfFriendsViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
     viewController.title = @"朋友圈";
 }
