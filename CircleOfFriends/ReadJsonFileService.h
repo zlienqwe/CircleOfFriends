@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ReadJson.h"
+#import "JsonFileToString.h"
 @interface ReadJsonFileService : NSObject
 
--(NSMutableArray*)readJson:(NSString*)file;
+-(NSMutableArray*)readJsonFile:(NSString*)file;
 
 @end

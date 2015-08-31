@@ -34,6 +34,7 @@
     [self createTableViewFooter:tableview];
 }
 
+
 -(void)createTableViewFooter:(UITableView *)tableview{
     UIView *tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableview.bounds.size.width, 30)];
     UILabel *loadMoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,20,60,20)];
@@ -44,6 +45,7 @@
     tableview.tableFooterView = tableFooterView;
 }
 
+     
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

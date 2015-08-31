@@ -73,6 +73,7 @@
     self.replyFrame = CGRectMake(PADDING * 2 + avatarWidth, PADDING * 6 + usernameLabelH + textLableH + imagesHeight , replyLabelW, replyLabelH);
 }
 
+
 - (CGSize)sizeWithString:(NSString *)str font:(UIFont *)font maxSize:(CGSize)maxSize
 {
     NSDictionary *dict = @{NSFontAttributeName : font};

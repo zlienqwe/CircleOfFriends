@@ -23,6 +23,7 @@
 
 @implementation ContentMapping
 
+
 -(ContentMapping *)initWithContentUserName:(NSString *)contentUserName And:(NSString *)contentText And:(NSString *)contentPubTime And:(NSString *)contentAvatar And:(NSString *)contentImages And:(NSString *)contentReply
 {
     if ((self = [super init])) {
@@ -36,6 +37,7 @@
     return self;
 }
 
+
 -(NSMutableArray*)mappingContentArray:(NSArray *)contentArray
 {
     NSMutableArray *array= [[NSMutableArray alloc]init];
@@ -45,6 +47,7 @@
     }];
     return array;
 }
+
 
 -(ContentModel*) mappingContent:(NSDictionary *)contentData
 {

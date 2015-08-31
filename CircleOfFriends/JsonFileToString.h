@@ -10,7 +10,7 @@
 #import "ContentMapping.h"
 
 
-@interface ReadJson : NSObject
+@interface JsonFileToString : NSObject
 
 @property ContentMapping *contentMapping;
 -(NSMutableArray*)localfileWithContentsOfJSONString:(NSString*)fileLocation;

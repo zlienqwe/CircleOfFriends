@@ -95,8 +95,8 @@
     
     NSMutableArray * lines = content.contentReply;
     NSMutableString * string =[NSMutableString new];
-    for (NSDictionary * line in lines) {
-        NSDictionary * dict = line;
+    for (NSMutableDictionary * line in lines) {
+        NSMutableDictionary * dict = line;
         NSArray * keys = [dict allKeys];
         for (NSString * key in keys) {
             NSString * value = [dict objectForKey:key];
@@ -105,6 +105,7 @@
     }
     self.contentReply.text = string;
 }
+
 
 - (void) settingFrame
 {
