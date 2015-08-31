@@ -11,8 +11,8 @@
 
 
 @interface ReadJson : NSObject
-@property ContentMapping *contentMapping;
 
+@property ContentMapping *contentMapping;
 -(NSMutableArray*)localfileWithContentsOfJSONString:(NSString*)fileLocation;
 
 @end

@@ -11,9 +11,8 @@
 
 @interface ContentMapping : NSObject
 
-
-
 -(ContentMapping*)initWithContentUserName:(NSString*) contentUserName And:(NSString*) contentText And:(NSString*) contentPubTime And:(NSString*) contentAvatar And:(NSString *) contentImages And:(NSString *) contentReply;
 -(NSMutableArray*)mappingContentArray:(NSArray*)contentArray;
 -(ContentModel*) mappingContent:(NSDictionary*)contentData;
+
 @end

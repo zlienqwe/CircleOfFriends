@@ -9,13 +9,14 @@
 #ifndef CircleOfFriends_CircleOfFriends_Prefix_pch
 #define CircleOfFriends_CircleOfFriends_Prefix_pch
 
-
-
 #define usernameFont [UIFont fontWithName:@"STHeitiSC-Medium" size:14]
+#define userNameFont [UIFont boldSystemFontOfSize:16.0]
 #define textFont [UIFont fontWithName:@"STHeitiSC-Medium" size:12]
 #define pubTimeFont [UIFont fontWithName:@"STHeitiSC-Medium" size:10]
 #define replyFont [UIFont fontWithName:@"STHeitiSC-Medium" size:12]
+#define loadLabelFont [UIFont fontWithName:@"Helvetica Neue" size:14]]
 #define PADDING 8
+#define HEADERHEIGHT 240
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define Local @"content.json"
 #define MORE @"moreContent.json"

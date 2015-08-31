@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface ContentModel : NSObject
-@property NSString * contentUserName;
-@property NSString * contentText;
-@property NSString * contentPubTime;
-@property NSString * contentAvatar;
-@property NSString * contentImages;
-@property NSString * contentReplyIcon;
-@property NSMutableArray * contentReply;
+
+@property (nonatomic, strong) NSString * contentUserName;
+@property (nonatomic, strong) NSString * contentText;
+@property (nonatomic, strong) NSString * contentPubTime;
+@property (nonatomic, strong) NSString * contentAvatar;
+@property (nonatomic, strong) NSString * contentImages;
+@property (nonatomic, strong) NSString * contentReplyIcon;
+@property (nonatomic, strong) NSMutableArray * contentReply;
+
 @end

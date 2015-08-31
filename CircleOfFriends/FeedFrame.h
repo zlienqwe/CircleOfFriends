@@ -20,10 +20,7 @@
 @property (nonatomic, assign) CGRect pubTimeFrame;
 @property (nonatomic, assign) CGRect replyIconFrame;
 @property (nonatomic, assign) CGRect replyFrame;
-
-
 @property (nonatomic, assign) CGFloat cellHeight;
-
 @property (nonatomic, strong) ContentModel *content;
 
 @end

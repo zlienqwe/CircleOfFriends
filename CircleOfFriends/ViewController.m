@@ -10,7 +10,6 @@
 #import "Service.h"
 #import "ContentCell.h"
 #import "ContentModel.h"
-#import "ReadPlist.h"
 #import "ContentInfoMapping.h"
 #import "FeedFrame.h"
 #import "LoadContent.h"
@@ -25,7 +24,6 @@ static NSString *cellWithIdentifier = @"Cell";
     UIActivityIndicatorView *activityIndicator;
     UIImage * albumCover;
     UIImage * selfAvatarImage;
-    ReadPlist *readPlist;
     LoadContent * loadContent;
     NSMutableArray *models;
 }
@@ -40,21 +38,22 @@ static NSString *cellWithIdentifier = @"Cell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initCameraButton];
+    [self initTableView];
+    [self initTableViewHeaderView];
     service = [Service new];
-    loadContent = [LoadContent new];
     contentObject = [service readJson:Local];
     [self setFeedFrame];
+    loadContent = [LoadContent new];
     [self.contentTableView reloadData];
-    [self initTableView];
-    [self initCameraButton];
-    [self initTableViewHeaderView];
     [self setupRefresh];
 }
--(void)setupRefresh{
+-(void)setupRefresh
+{
         MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
         header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
                 [self loadNewData];
-            }];
+        }];
         header.automaticallyChangeAlpha = YES;
         header.lastUpdatedTimeLabel.hidden = YES;
         header.stateLabel.hidden = YES;
@@ -97,18 +96,25 @@ static NSString *cellWithIdentifier = @"Cell";
 
 -(void)initTableViewHeaderView
 {
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 240)];
+    int avatarWeight = 60;
+    int avatarHeight = 60;
+    int avatarFromTop = 200;
+    int userNameFromTop = 210;
+    int userNameWeight = 45;
+    int userNameHeight = 18;
+    int borderWidth = 2;
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEADERHEIGHT)];
     headerView.backgroundColor = [UIColor whiteColor];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, 240)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, HEADERHEIGHT)];
     imageView.image = [UIImage imageNamed:@"AlbumCover"];
-    UIImageView * imageAvatar = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH -PADDING - 60, 200, 60, 60)];
+    UIImageView * imageAvatar = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH -PADDING - avatarWeight, avatarFromTop, avatarWeight, avatarHeight)];
     imageAvatar.image = [UIImage imageNamed:@"ImageAvatar"];
-    imageAvatar.layer.borderWidth = 2;
+    imageAvatar.layer.borderWidth = borderWidth;
     imageAvatar.layer.borderColor = [UIColor whiteColor].CGColor;
     UILabel * userName = [[UILabel alloc] init];
-    userName.frame = CGRectMake(SCREEN_WIDTH-PADDING-imageAvatar.frame.size.width - 45, 210, 45, 18);
+    userName.frame = CGRectMake(SCREEN_WIDTH-PADDING-avatarWeight - userNameWeight, userNameFromTop, userNameWeight, userNameHeight);
     userName.textColor = [UIColor whiteColor];
-    userName.font = [UIFont boldSystemFontOfSize:16.0];
+    userName.font = userNameFont;
     userName.text = @"Zlien";
     userName.textAlignment = NSTextAlignmentLeft;
     [headerView addSubview:imageView];
@@ -119,7 +125,7 @@ static NSString *cellWithIdentifier = @"Cell";
 
 -(void)initTableView
 {
-    CGRect frame=CGRectMake(0, -50, 320, self.view.frame.size.height+90);
+    CGRect frame=CGRectMake(0, -50, SCREEN_WIDTH, self.view.frame.size.height+90);
     self.contentTableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
     self.contentTableView.dataSource = self;
     self.contentTableView.delegate = self;

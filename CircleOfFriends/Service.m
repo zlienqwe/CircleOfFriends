@@ -18,9 +18,4 @@
     return [readJson localfileWithContentsOfJSONString:file];
 }
 
--(void)urlJson:(NSString*)url AsynBack:(Asyn) asynback
-{
-    [[UrlJson new] netfileWithContentsOfJSONString:url AsynBack:asynback];
-}
-
 @end

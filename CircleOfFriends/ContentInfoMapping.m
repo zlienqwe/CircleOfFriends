@@ -9,7 +9,9 @@
 #import "ContentInfoMapping.h"
 
 @implementation ContentInfoMapping
-+(ContentModel*) contentInfo:(NSMutableArray*) contentArray{
+
++(ContentModel*) contentInfo:(NSMutableArray*) contentArray
+{
     ContentModel * contentInfoList = [ContentModel new];
     contentInfoList.contentUserName=[contentArray valueForKey:@"contentUserName"];
     contentInfoList.contentAvatar=[contentArray valueForKey:@"contentAvatar"];
@@ -18,8 +20,6 @@
     contentInfoList.contentImages = [contentArray valueForKey:@"contentImages"];
     contentInfoList.contentReply = [contentArray valueForKey:@"contentReply"];
     return contentInfoList;
-
-    
-    
 }
+
 @end

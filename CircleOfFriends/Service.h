@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ReadJson.h"
-#import "UrlJson.h"
 @interface Service : NSObject
 
 -(NSMutableArray*)readJson:(NSString*)file;
--(void)urlJson:(NSString*)url AsynBack:(Asyn) asynback;
 
 @end
