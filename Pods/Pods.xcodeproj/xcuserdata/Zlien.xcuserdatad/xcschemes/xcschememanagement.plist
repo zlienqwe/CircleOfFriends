@@ -4,7 +4,37 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CocoaLumberjack.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GPUImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MMPlaceHolder.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Mantle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -14,15 +44,115 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PureLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReactiveMantle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UIColor+FlatColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UIView-Autolayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>VBFPopFlatButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>pop.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1BDE5FB1BC688D1AEDD777233310C8AB</key>
+		<key>46F040E458EAD45E54EE9B16F10ADFF1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>499F8513DA9F68498F8C54F0B0E99A85</key>
+		<key>47C800E42623009B7192B025B3DD25A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48EEF0EC1EB4516D814CFD6B49DAAC9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4B42FE58F9FD2809388EF7EFB8349F72</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>584A7C04D70DB0F0E725E8466288FB18</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>59D847C30D02A1548777D39F35CE3E8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6FEA1F35305EBE75B1B1D93778745AD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>741459282218B51D3C25C36FAA80BC6D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7CF857C3F7EEFDF0F7822A2733D7FAFD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9C2216F9F97112EA6E7E00FA6082C297</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B8CAD044C5A99271A86AFB11DADE4B93</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CBFCBB58EFB04AD8B4897127F1763CC2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CD82FA283291E22E0D26AB7C54A2BDFA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E09CB4CF4207679C9C108EBFBD3EFB51</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EBC2C0ED2923ADAD8D6F6964225E3B4C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -22,6 +22,8 @@
 #define MoreContentJsonFile @"moreContent.json"
 #define NewContentJsonFile @"newContent.json"
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
+#import <UIKit/UIKit.h>
+#import "GPUImage.h"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 

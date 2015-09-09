@@ -11,7 +11,8 @@
 
 @interface LoadContent : UIViewController
 
-- (void) beginLoadContent:(UITableView*) tableview Data:(NSMutableArray*) arrayData;
-- (void) createTableViewFooter:(UITableView*) tableview;
+- (void)beginLoadContent:(UITableView *)tableview
+                    Data:(NSMutableArray *)arrayData;
+- (void)createTableViewFooter:(UITableView *)tableview;
 
 @end

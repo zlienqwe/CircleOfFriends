@@ -41,11 +41,13 @@
 		8A2AAF371B8C6E160043A127 /* content11.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AAF2B1B8C6E160043A127 /* content11.png */; };
 		8A2AAF381B8C6E160043A127 /* content12.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AAF2C1B8C6E160043A127 /* content12.png */; };
 		8A2AAF3A1B8C718F0043A127 /* content1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A2AAF391B8C718F0043A127 /* content1.png */; };
+		8A438CD01B9BFDFA00F24F96 /* rocket.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A438CCF1B9BFDFA00F24F96 /* rocket.png */; };
 		8AABF43B1B8FEBF800263B00 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AABF4371B8FEBF800263B00 /* LaunchScreen.xib */; };
 		8AABF43C1B8FEBF800263B00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AABF4391B8FEBF800263B00 /* Main.storyboard */; };
 		8AABF4641B900E7100263B00 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AABF4631B900E7100263B00 /* content.json */; };
 		8AABF4661B900E8100263B00 /* newContent.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AABF4651B900E8100263B00 /* newContent.json */; };
 		8AABF4681B900E9E00263B00 /* moreContent.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AABF4671B900E9E00263B00 /* moreContent.json */; };
+		8ACEC95A1B9E82C9005DD458 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ACEC9591B9E82C9005DD458 /* like.png */; };
 		8AE438991B8DEAA30076860F /* FeedFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE438981B8DEAA30076860F /* FeedFrame.m */; };
 		8AE4389C1B8EA6D80076860F /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4389B1B8EA6D80076860F /* reply.png */; };
 		8AE438AC1B8EDED10076860F /* ImageAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE438AB1B8EDED10076860F /* ImageAvatar.png */; };
@@ -87,7 +89,7 @@
 		8A0889C71B8AB3FC0003445D /* JsonFileToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonFileToString.h; sourceTree = "<group>"; };
 		8A0889D01B8AB5BA0003445D /* ContentMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentMapping.h; sourceTree = "<group>"; };
 		8A0889D11B8AB5BA0003445D /* ContentMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentMapping.m; sourceTree = "<group>"; };
-		8A0889D31B8AB8680003445D /* ContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentModel.h; sourceTree = "<group>"; };
+		8A0889D31B8AB8680003445D /* ContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentModel.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		8A0889D41B8AB8680003445D /* ContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentModel.m; sourceTree = "<group>"; };
 		8A0889F01B8B02CD0003445D /* ContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCell.m; sourceTree = "<group>"; };
 		8A0889F31B8B09AE0003445D /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -115,11 +117,13 @@
 		8A2AAF2B1B8C6E160043A127 /* content11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = content11.png; sourceTree = "<group>"; };
 		8A2AAF2C1B8C6E160043A127 /* content12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = content12.png; sourceTree = "<group>"; };
 		8A2AAF391B8C718F0043A127 /* content1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = content1.png; sourceTree = "<group>"; };
+		8A438CCF1B9BFDFA00F24F96 /* rocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocket.png; sourceTree = "<group>"; };
 		8AABF4381B8FEBF800263B00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		8AABF43A1B8FEBF800263B00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		8AABF4631B900E7100263B00 /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
 		8AABF4651B900E8100263B00 /* newContent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newContent.json; sourceTree = "<group>"; };
 		8AABF4671B900E9E00263B00 /* moreContent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = moreContent.json; sourceTree = "<group>"; };
+		8ACEC9591B9E82C9005DD458 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		8AE438971B8DEAA30076860F /* FeedFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedFrame.h; sourceTree = "<group>"; };
 		8AE438981B8DEAA30076860F /* FeedFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedFrame.m; sourceTree = "<group>"; };
 		8AE4389A1B8E03A40076860F /* CircleOfFriends-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CircleOfFriends-Prefix.pch"; sourceTree = "<group>"; };
@@ -276,7 +280,9 @@
 		8A0889BD1B8AA4530003445D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8ACEC9591B9E82C9005DD458 /* like.png */,
 				8AE4389B1B8EA6D80076860F /* reply.png */,
+				8A438CCF1B9BFDFA00F24F96 /* rocket.png */,
 				8AE438B31B8F00DB0076860F /* selfFile */,
 				8A2AAF201B8C6DB00043A127 /* ContentImageFile */,
 				8A0889F21B8B09890003445D /* ContentAvatarFile */,
@@ -432,6 +438,7 @@
 				8A0889971B8AA19F0003445D /* Main.storyboard in Resources */,
 				8AABF4641B900E7100263B00 /* content.json in Resources */,
 				8A088A101B8B27340003445D /* RootViewController.xib in Resources */,
+				8ACEC95A1B9E82C9005DD458 /* like.png in Resources */,
 				8A2AAF3A1B8C718F0043A127 /* content1.png in Resources */,
 				8A2AAF381B8C6E160043A127 /* content12.png in Resources */,
 				8A08899C1B8AA19F0003445D /* LaunchScreen.xib in Resources */,
@@ -448,6 +455,7 @@
 				8AABF4661B900E8100263B00 /* newContent.json in Resources */,
 				8A0889991B8AA19F0003445D /* Images.xcassets in Resources */,
 				8A2AAF2F1B8C6E160043A127 /* content3.png in Resources */,
+				8A438CD01B9BFDFA00F24F96 /* rocket.png in Resources */,
 				8A0889FA1B8B09AE0003445D /* 1.png in Resources */,
 				8A2AAF301B8C6E160043A127 /* content4.png in Resources */,
 				8A2AAF2E1B8C6E160043A127 /* content2.png in Resources */,
@@ -663,9 +671,14 @@
 			baseConfigurationReference = 7E7E73C94B7703F7C30A1332 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "CircleOfFriends/CircleOfFriends-Prefix.pch";
 				INFOPLIST_FILE = CircleOfFriends/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CircleOfFriends",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -675,9 +688,14 @@
 			baseConfigurationReference = 6AD16645A5AB64C2F8DBEFDC /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "CircleOfFriends/CircleOfFriends-Prefix.pch";
 				INFOPLIST_FILE = CircleOfFriends/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CircleOfFriends",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

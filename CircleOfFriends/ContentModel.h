@@ -18,4 +18,5 @@
 @property (nonatomic, strong) NSString * contentReplyIcon;
 @property (nonatomic, strong) NSMutableArray * contentReply;
 
+
 @end

@@ -6,15 +6,11 @@
 //  Copyright (c) 2015 Zlien. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface CircleOfFriendsViewController : UIViewController
-{
-    CGRect _rect;
+@interface CircleOfFriendsViewController : UIViewController {
+  CGRect _rect;
 }
 
-@property (nonatomic) UITableView * contentTableView;
-@property (strong, nonatomic) NSMutableArray *data;
+@property(nonatomic) UITableView *contentTableView;
+@property(strong, nonatomic) NSMutableArray *data;
 
 @end
-
